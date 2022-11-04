@@ -1,14 +1,24 @@
-import { useEffect } from 'react';
-import axios from 'axios';
+
+import { Routes, Route } from 'react-router-dom'
 import './App.css';
+import { Nav } from './components/Nav/Nav';
+import { RecipeList } from './components/RecipeList/RecipeList';
+import { HomePage } from './components/HomePage/HomePage'
+import { RecipeSingle } from './components/RecipeSingle/RecipeSingle';
+
 
 function App() {
-  useEffect(() => {
-    axios.get('/api/recipes')
-      .then(res => console.log(res.data))
-  }, [])
+
+
   return (
-    'APP'
+    <div className='app-container'>
+      <Nav />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/recipes' element={<RecipeList />} />
+        <Route path='/recipe-single/:id' element={<RecipeSingle />} />
+      </Routes>
+    </div>
   );
 }
 

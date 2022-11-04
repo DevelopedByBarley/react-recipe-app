@@ -1,0 +1,20 @@
+.recipeList-container {
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .recipeList-container {
+    display: grid;
+    grid-gap: 1rem;
+  }
+}
+.recipeList-container .card {
+  border: 1px solid;
+  margin-bottom: 1rem;
+}
+
+.recipeList-container .card .card-header img {
+  width: 100%;
+}
+

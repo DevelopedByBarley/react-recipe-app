@@ -8,10 +8,12 @@ const cors = require('cors');
 const connectToDb = require('./database/connection/connect')
 const recipeRouter = require('./routes/recipe');
 
+console.log(__dirname)
 
 
 
 app.use(cors());
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));

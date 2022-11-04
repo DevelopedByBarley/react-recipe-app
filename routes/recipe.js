@@ -23,13 +23,20 @@ const upload = multer({ storage: storage })
 
 
 
+
 router.get('/', async (req, res) => {
   const allRecipes = await Recipe.find({});
   res.send(allRecipes)
 })
 
+router.get('/:id', async (req,res) => {
+  const id = req.params.id;
+  const recipeById = await Recipe.findOne({id: id})
+  res.send(recipeById)
+})
+
 router.post('/', upload.single('fileName'), async (req, res) => {
-  console.log(req.file)
+
 
   const fileName = req.file.filename;
   const recipeData = JSON.parse(req.body.data)
@@ -48,6 +55,7 @@ router.post('/', upload.single('fileName'), async (req, res) => {
     imageURL: fileName
   }
 
+
   const newRecipe = await new Recipe(recipe)
   await newRecipe.save()
   res.send(newRecipe)
@@ -64,10 +72,10 @@ router.delete('/:recipeId', async (req, res) => {
   const fileName = deletedRecipe.imageURL;
 
 
-  fs.unlink(`./public/assets/files/${fileName}`,function(err){
-    if(err) return console.log(err);
+  fs.unlink(`./public/assets/files/${fileName}`, function (err) {
+    if (err) return console.log(err);
     console.log('file deleted successfully');
-});  
+  });
 
   res.send(deletedRecipe)
 })
