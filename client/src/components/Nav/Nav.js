@@ -11,6 +11,9 @@ export function Nav() {
         <li>
           <Link to="/recipes">Recipes</Link>
         </li>
+        <li>
+          <Link to="/recipes/add">Add recipe</Link>
+        </li>
       </ul>
     </nav>
 
