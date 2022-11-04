@@ -29,13 +29,14 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', upload.single('fileName'), async (req, res) => {
+  console.log(req.file)
 
   const fileName = req.file.filename;
   const recipeData = JSON.parse(req.body.data)
   const ingredientsData = JSON.parse(req.body.ingredients)
   const stepsData = JSON.parse(req.body.steps)
 
-  console.log(stepsData.steps)
+
   const recipe = {
     title: recipeData.title,
     ingredients: ingredientsData.ingredients,
