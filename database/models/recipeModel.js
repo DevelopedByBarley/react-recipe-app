@@ -11,6 +11,10 @@ const RecipeSchema = new Schema({
     required: false
   },
   ingredients: [{
+    id: {
+      type: String,
+      required: true
+    },
     name: {
       type: String,
       required: true
@@ -25,7 +29,7 @@ const RecipeSchema = new Schema({
     }
   }],
   steps: [{
-    name: {
+    id: {
       type: String,
       required: true
     },
