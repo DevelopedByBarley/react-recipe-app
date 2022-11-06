@@ -14,7 +14,7 @@ export function Form() {
 
   const [steps, setSteps] = useState([{
     id: uuidv4(),
-    conent: ""
+    content: ""
   }])
 
   return (
@@ -29,7 +29,7 @@ export function Form() {
         }
 
         const file = event.target.elements.fileName.files[0];
-        
+
 
         const formData = new FormData();
         formData.append('data', JSON.stringify(recipeData));
@@ -121,7 +121,7 @@ export function Form() {
                 <input type="text" name={`steps-content-${index}`} placeholder="step" onChange={(event) => {
                   setSteps((prev) => {
                     const next = [...prev];
-                    next[index].conent = event.target.value;
+                    next[index].content = event.target.value;
                     return next;
                   })
                 }} />
@@ -147,7 +147,7 @@ export function Form() {
         </div>
 
         <div className='file'>
-          <input type="file" name="fileName" id="fileName"/>
+          <input type="file" name="fileName" id="fileName" />
         </div>
 
 

@@ -44,11 +44,12 @@ router.post('/', upload.single('fileName'), async (req, res) => {
   const ingredientsData = JSON.parse(req.body.ingredients)
   const stepsData = JSON.parse(req.body.steps)
 
+  console.log(stepsData.conent);
 
   const recipe = {
     title: recipeData.title,
-    ingredients: ingredientsData.ingredients,
-    steps: stepsData.steps,
+    ingredients: ingredientsData,
+    steps: stepsData,
     prepTime: Number(recipeData.prepTime),
     cookTime: Number(recipeData.cookTime),
     fullTime: Number(recipeData.prepTime) + Number(recipeData.cookTime),

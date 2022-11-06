@@ -64,6 +64,9 @@ export function RecipeList() {
                         Check
                       </button>
                     </Link>
+                    <Link to={`/recipe-update/${recipe._id}`}>
+                      <button className='update-btn'>Update</button>
+                    </Link>
                   </div>
                 </div>
               )
