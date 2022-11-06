@@ -29,10 +29,10 @@ router.get('/', async (req, res) => {
   res.send(allRecipes)
 })
 
-router.get('/:id', async (req,res) => {
+router.get('/:id', async (req, res) => {
   const id = req.params.id;
   console.log(id);
-  const recipeById = await Recipe.findOne({_id: id})
+  const recipeById = await Recipe.findOne({ _id: id })
   res.send(recipeById)
 })
 
@@ -43,8 +43,6 @@ router.post('/', upload.single('fileName'), async (req, res) => {
   const recipeData = JSON.parse(req.body.data)
   const ingredientsData = JSON.parse(req.body.ingredients)
   const stepsData = JSON.parse(req.body.steps)
-
-  console.log(stepsData.conent);
 
   const recipe = {
     title: recipeData.title,
@@ -83,16 +81,18 @@ router.delete('/:recipeId', async (req, res) => {
 })
 
 router.put('/:recipeId', upload.single('fileName'), async (req, res) => {
-  const id = req.params.recipeId;
   const fileName = req.file.filename;
   const recipeData = JSON.parse(req.body.data)
   const ingredientsData = JSON.parse(req.body.ingredients)
   const stepsData = JSON.parse(req.body.steps)
+  const id = req.params.recipeId;
 
-  const newRecipe = {
+  
+
+  const recipeForUpdate = {
     title: recipeData.title,
-    ingredients: ingredientsData.ingredients,
-    steps: stepsData.steps,
+    ingredients: ingredientsData,
+    steps: stepsData,
     prepTime: Number(recipeData.prepTime),
     cookTime: Number(recipeData.cookTime),
     fullTime: Number(recipeData.prepTime) + Number(recipeData.cookTime),
@@ -100,7 +100,7 @@ router.put('/:recipeId', upload.single('fileName'), async (req, res) => {
     imageURL: fileName
   }
 
-  const updatedRecipe = await Recipe.findByIdAndUpdate({ _id: id }, newRecipe, { returnOriginal: false })
+  const updatedRecipe = await Recipe.findByIdAndUpdate({ _id: id }, recipeForUpdate, { returnOriginal: false })
   res.send(updatedRecipe)
 })
 
