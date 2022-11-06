@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { Spinner } from '../Spinner/Spinner';
 
-export function HomePage() {
+export function HomePage({ isThemeDark }) {
 
   const [recipes, setRecipes] = useState([]);
   const [isPending, setPending] = useState(false)
@@ -27,9 +27,9 @@ export function HomePage() {
         )
         :
         (
-          <div>
+          <div className={`${isThemeDark ? "dark": ""}`}>
             <h1>You have {recipes.length} Recipes!</h1>
-            <Link to="/recipes">LetsSee!</Link>
+            <Link className='link' to="/recipes">LetsSee!</Link>
           </div>
 
         )

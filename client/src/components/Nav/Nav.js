@@ -1,20 +1,24 @@
+import './Nav.css'
 import { Link } from 'react-router-dom'
+import { SwitchTheme } from '../SwitchTheme/SwitchTheme'
 
 
-export function Nav() {
+export function Nav({isThemeDark, setThemeDark}) {
   return (
-    <nav>
+    <nav className={`${isThemeDark ? "dark": ""}`}>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link className='link' to="/">Home</Link>
         </li>
         <li>
-          <Link to="/recipes">Recipes</Link>
+          <Link className='link' to="/recipes">Recipes</Link>
         </li>
         <li>
-          <Link to="/recipes/add">Add recipe</Link>
+          <Link className='link' to="/recipes/add">Add recipe</Link>
         </li>
       </ul>
+
+      <SwitchTheme isThemeDark={isThemeDark} setThemeDark={setThemeDark}/>
     </nav>
 
   )

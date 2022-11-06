@@ -1,4 +1,14 @@
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 100vh;
+}
+
+.dark {
+  transition: all .4s ease-in-out;
+  color: white;
+  background-color: hsla(189, 100%, 12%, 1)
+}
+.link {
+  color: orange;
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { v4 as uuidv4, v4 } from 'uuid';
 import { useState } from 'react';
 
-export function Form() {
+export function Form({ isThemeDark }) {
 
   const [ingredients, setIngredients] = useState([{
     id: uuidv4(),
@@ -18,7 +18,7 @@ export function Form() {
   }])
 
   return (
-    <div className="form-container">
+    <div className={`${isThemeDark ? "dark" : ""} form-container`}>
       <form onSubmit={(event) => {
         event.preventDefault();
         const recipeData = {

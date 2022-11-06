@@ -4,7 +4,7 @@ import { Spinner } from '../Spinner/Spinner';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export function RecipeList() {
+export function RecipeList({isThemeDark}) {
   const [recipes, setRecipes] = useState([]);
   const [isPending, setPending] = useState(false)
 
@@ -27,7 +27,7 @@ export function RecipeList() {
         )
         :
         (
-          <div className='recipeList-container'>
+          <div className={`${isThemeDark ? "dark": ""} recipeList-container`}>
             {recipes.map((recipe, index) => {
               return (
 
