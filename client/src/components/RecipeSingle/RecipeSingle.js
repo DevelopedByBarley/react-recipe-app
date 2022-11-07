@@ -35,7 +35,7 @@ export function RecipeSingle({ isThemeDark }) {
 
               <div className='recipe-single-content'>
                 <div className='recipe-single-image'>
-                  <img src={`http://localhost:8080/assets/files/${recipe.imageURL}`} />
+                  <img src={`/assets/files/${recipe.imageURL}`} />
                 </div>
                 <div className='recipe-single-body'>
                   <div className='recipe-time'>

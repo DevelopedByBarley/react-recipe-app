@@ -33,7 +33,7 @@ export function RecipeList({isThemeDark}) {
 
                 <div className='card' key={recipe._id}>
                   <div className='card-header'>
-                    <img src={`http://localhost:8080/assets/files/${recipe.imageURL}`} alt="recipe-picture" />
+                    <img src={`/assets/files/${recipe.imageURL}`} alt="recipe-picture" />
                   </div>
                   <div className='card-body'>
                     <h1>{recipe.title}</h1>
