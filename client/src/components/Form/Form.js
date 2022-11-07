@@ -1,6 +1,6 @@
 import './Form.css'
 import axios from 'axios';
-import { v4 as uuidv4, v4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 
 export function Form({ isThemeDark }) {
@@ -38,17 +38,14 @@ export function Form({ isThemeDark }) {
         formData.append('fileName', file)
         axios({
           method: "post",
-          url: "http://localhost:8080/api/recipes",
+          url: "/api/recipes",
           data: formData,
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         })
-
-
           .then(res => console.log(res.data))
           .catch((err) => console.log(err))
-        event.preventDefault();
       }}>
 
         <div>
