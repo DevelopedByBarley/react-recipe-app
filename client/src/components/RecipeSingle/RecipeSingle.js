@@ -56,7 +56,7 @@ export function RecipeSingle({ isThemeDark }) {
                     <h1 className='recipe-title'>{recipe.title}</h1>
                   </div>
                   <div className='recipe-single-ingredients'>
-                    <h3>Ingredients</h3>
+                    <h3>Hozzávalók</h3>
                     {recipe.ingredients?.map((ingredient, index) => {
                       return (
                         <div className='recipe-single-ingredient'>
