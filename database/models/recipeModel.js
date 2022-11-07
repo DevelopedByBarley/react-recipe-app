@@ -6,6 +6,10 @@ const RecipeSchema = new Schema({
     type: String,
     required: true
   },
+  date: {
+    type: Date,
+    default: Date.now
+  },
   imageURL: {
     type: String,
     required: false
@@ -20,7 +24,7 @@ const RecipeSchema = new Schema({
       required: true
     },
     quantity: {
-      type: String,
+      type: Number,
       required: true
     },
     type: {

@@ -1,7 +1,5 @@
 
-.switch-theme-container {
-    background-color: white;
-}
+
 
 .theme-btn {
     border-radius: 100%;
@@ -16,9 +14,11 @@
 
 .theme-light-btn {
     background-color: white;
+    border: 1px solid hsla(189, 100%, 12%, 1);
 }
 
 .theme-dark-btn {
     background-color: hsla(189, 100%, 12%, 1);
+    border: 1px solid white;;
     margin: .5rem;
 }

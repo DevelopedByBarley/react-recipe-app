@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { v4 as uuidv4, v4 } from 'uuid';
 
 export function UpdateForm() {
+  const navigate = useNavigate();
   const param = useParams();
   const id = param.id;
 
@@ -51,40 +52,40 @@ export function UpdateForm() {
         formData.append('fileName', file)
         axios({
           method: "put",
-          url: `http://localhost:8080/api/recipes/${id}`,
+          url: `/api/recipes/${id}`,
           data: formData,
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         })
-          .then(res => console.log(res.data))
+          .then(res => navigate('/recipes'))
           .catch((err) => console.log(err))
         event.preventDefault();
       }}>
 
         <div>
-          <input type="text" name="title" id="title" defaultValue={recipeData.title} />
+          <input type="text" name="title" id="title" required defaultValue={recipeData.title} />
         </div>
 
         <div className="ingredients">
           {ingredients?.map((ingredient, index) => {
             return (
               <div key={index}>
-                <input type="text" defaultValue={ingredient.name} name={`ingredient-name-${index}`} onChange={(event) => {
+                <input type="text" defaultValue={ingredient.name} name={`ingredient-name-${index}`} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].name = event.target.value;
                     return next
                   })
                 }} />
-                <input type="text" defaultValue={ingredient.quantity} name={`ingredient-quantity-${index}`} onChange={(event) => {
+                <input type="number" defaultValue={ingredient.quantity} name={`ingredient-quantity-${index}`} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].quantity = event.target.value
                     return next
                   })
                 }} />
-                <select name={`ingredient-type-${index}`} defaultValue={ingredient.type} onChange={(event) => {
+                <select name={`ingredient-type-${index}`} defaultValue={ingredient.type} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].type = event.target.value
@@ -111,7 +112,7 @@ export function UpdateForm() {
               </div>
             )
           })}
-          <button className="add-ingredient" onClick={(event) => {
+          <button className="add-ingredient" required onClick={(event) => {
             event.preventDefault();
             setIngredients((prev) => [...prev, {
               id: uuidv4(),
@@ -130,7 +131,7 @@ export function UpdateForm() {
           {steps?.map((step, index) => {
             return (
               <div className='step' key={index}>
-                <input type="text" name={`steps-content-${index}`} defaultValue={step.content} onChange={(event) => {
+                <input type="text" name={`steps-content-${index}`} defaultValue={step.content} required onChange={(event) => {
                   setSteps((prev) => {
                     const next = [...prev];
                     next[index].content = event.target.value;
@@ -159,7 +160,7 @@ export function UpdateForm() {
         </div>
 
         <div className='file'>
-          <input type="file" name="fileName" id="fileName" />
+          <input type="file" name="fileName" id="fileName" required/>
         </div>
 
 
@@ -167,13 +168,13 @@ export function UpdateForm() {
 
 
         <div>
-          <input type="number" name="prepTime" id="prepTime" defaultValue={recipeData.prepTime} />
+          <input type="number" name="prepTime" id="prepTime" defaultValue={recipeData.prepTime} required />
         </div>
         <div>
-          <input type="number" name="cookTime" id="cookTime" defaultValue={recipeData.cookTime} />
+          <input type="number" name="cookTime" id="cookTime" defaultValue={recipeData.cookTime} required/>
         </div>
         <div>
-          <textarea rows="4" col="50" name="comment" defaultValue={recipeData.comment}>
+          <textarea rows="4" col="50" name="comment" defaultValue={recipeData.comment} required>
 
           </textarea>
         </div>

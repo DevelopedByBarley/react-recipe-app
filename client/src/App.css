@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -10,5 +16,7 @@
   background-color: hsla(189, 100%, 12%, 1)
 }
 .link {
-  color: orange;
+  color: #e28743;
 }
+
+/*#e28743*/

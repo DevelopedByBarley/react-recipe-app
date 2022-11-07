@@ -1,25 +1,37 @@
 import './Nav.css'
 import { Link } from 'react-router-dom'
 import { SwitchTheme } from '../SwitchTheme/SwitchTheme'
+import { useState } from 'react'
+import { RiMenuFill } from 'react-icons/ri'
 
 
-export function Nav({isThemeDark, setThemeDark}) {
+export function Nav({ isThemeDark, setThemeDark }) {
+  const [isMenuActive, setMenuActive] = useState(false)
+
   return (
-    <nav className={`${isThemeDark ? "dark": ""}`}>
-      <ul>
-        <li>
-          <Link className='link' to="/">Home</Link>
-        </li>
-        <li>
-          <Link className='link' to="/recipes">Recipes</Link>
-        </li>
-        <li>
-          <Link className='link' to="/recipes/add">Add recipe</Link>
-        </li>
-      </ul>
+    <header>
+      <button className='menu-toggle' onClick={() => {
+        setMenuActive(prevCheck => !prevCheck)
+      }}>
+        <RiMenuFill />
+      </button>
+      <nav className={`${isMenuActive ? "active" : ""}`}>
+        <div className={`nav-wrapper ${isThemeDark ? "dark" : ""}`}>
+          <ul>
+            <li onClick={() => setMenuActive(false)}>
+              <Link className='link' to="/home">Home</Link>
+            </li>
+            <li onClick={() => setMenuActive(false)}>
+              <Link className='link' to="/recipes">Recipes</Link>
+            </li>
+            <li onClick={() => setMenuActive(false)}>
+              <Link className='link' to="/recipes/add">Add recipe</Link>
+            </li>
+          </ul>
 
-      <SwitchTheme isThemeDark={isThemeDark} setThemeDark={setThemeDark}/>
-    </nav>
-
+          <SwitchTheme isThemeDark={isThemeDark} setThemeDark={setThemeDark} />
+        </div>
+      </nav>
+    </header >
   )
 }

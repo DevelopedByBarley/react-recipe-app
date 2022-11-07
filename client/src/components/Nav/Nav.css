@@ -1,8 +1,49 @@
 
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 99;
+    left: -100%;
+    transition: all .4s ease-in-out;
+}
+
+.nav-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.active {
+    left: 0;
+}
+
+.menu-toggle {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    z-index: 100;
+    height: 50px;
+    width: 50px;
+    font-size: 1.5rem;
+    opacity: .7;
+    color: black;
+    border: 1px solid rgb(224, 224, 224);
+    cursor: pointer;
+}
+
+
+
+
 @media (min-width: 768px) {
     nav {
-        display: flex;
         width: 100%;
         justify-content: space-between;
+
     }
 }

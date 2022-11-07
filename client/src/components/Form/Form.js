@@ -2,8 +2,11 @@ import './Form.css'
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Form({ isThemeDark }) {
+
+  const navigate = useNavigate();
 
   const [ingredients, setIngredients] = useState([{
     id: uuidv4(),
@@ -44,33 +47,33 @@ export function Form({ isThemeDark }) {
             'Content-Type': 'multipart/form-data'
           }
         })
-          .then(res => console.log(res.data))
+          .then(res => navigate('/recipes'))
           .catch((err) => console.log(err))
       }}>
 
         <div>
-          <input type="text" name="title" id="title" />
+          <input type="text" name="title" id="title" required/>
         </div>
 
         <div className="ingredients">
           {ingredients.map((ingredient, index) => {
             return (
               <div key={index}>
-                <input type="text" placeholder='name' name={`ingredient-name-${index}`} onChange={(event) => {
+                <input type="text" placeholder='name' name={`ingredient-name-${index}`} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].name = event.target.value;
                     return next
                   })
                 }} />
-                <input type="text" placeholder='quantity' name={`ingredient-quantity-${index}`} onChange={(event) => {
+                <input type="number" placeholder='quantity' name={`ingredient-quantity-${index}`} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].quantity = event.target.value
                     return next
                   })
                 }} />
-                <select name={`ingredient-type-${index}`} defaultValue={"g"} onChange={(event) => {
+                <select name={`ingredient-type-${index}`} defaultValue={"g"} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].type = event.target.value
@@ -115,14 +118,14 @@ export function Form({ isThemeDark }) {
           {steps.map((step, index) => {
             return (
               <div className='step'>
-                <input type="text" name={`steps-content-${index}`} placeholder="step" onChange={(event) => {
+                <input type="text" name={`steps-content-${index}`} placeholder="step" required onChange={(event) => {
                   setSteps((prev) => {
                     const next = [...prev];
                     next[index].content = event.target.value;
                     return next;
                   })
                 }} />
-                <span><button className='delete-step' onClick={(event) => {
+                <span><button className='delete-step' required onClick={(event) => {
                   event.preventDefault();
                   const index = steps.findIndex(item => item.id === step.id);
                   setSteps((prev) => {
@@ -134,7 +137,7 @@ export function Form({ isThemeDark }) {
               </div>
             )
           })}
-          <button className='add-step' onClick={(event) => {
+          <button className='add-step' required onClick={(event) => {
             event.preventDefault();
             setSteps((prev) => [...prev, {
               id: uuidv4(),
@@ -144,7 +147,7 @@ export function Form({ isThemeDark }) {
         </div>
 
         <div className='file'>
-          <input type="file" name="fileName" id="fileName" />
+          <input type="file" name="fileName" id="fileName" required/>
         </div>
 
 
@@ -152,13 +155,13 @@ export function Form({ isThemeDark }) {
 
 
         <div>
-          <input type="number" name="prepTime" id="prepTime" />
+          <input type="number" name="prepTime" id="prepTime" required/>
         </div>
         <div>
-          <input type="number" name="cookTime" id="cookTime" />
+          <input type="number" name="cookTime" id="cookTime" required/>
         </div>
         <div>
-          <textarea rows="4" col="50" name="comment">
+          <textarea rows="4" col="50" name="comment" required>
             comment...
           </textarea>
         </div>

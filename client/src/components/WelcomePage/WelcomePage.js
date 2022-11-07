@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { Spinner } from '../Spinner/Spinner';
 
-export function HomePage({ isThemeDark }) {
+export function WelcomePage({ isThemeDark }) {
 
   const [recipes, setRecipes] = useState([]);
   const [isPending, setPending] = useState(false)
