@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setRatingVisible(true)
-    }, 120000)
+    }, 320000)
   }, [])
 
 

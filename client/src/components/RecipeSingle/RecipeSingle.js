@@ -62,7 +62,7 @@ export function RecipeSingle({ isThemeDark }) {
                         <div className='recipe-single-ingredient'>
                           <div className='ingredient-index'>{index + 1}. </div>
                           <div className='recipe-single-ingredient-name'>{ingredient.name}</div>
-                          <div className='recipe-single-ingredient-data'> {ingredient.quantity}{ingredient.type}</div>
+                          <div className='recipe-single-ingredient-data'> {ingredient.quantity} {ingredient.type}</div>
                         </div>
                       )
                     })}

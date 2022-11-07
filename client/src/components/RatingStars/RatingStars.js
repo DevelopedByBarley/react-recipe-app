@@ -38,7 +38,7 @@ export function RatingStars({ setRatingVisible }) {
             console.log(ratingCount + "ratingCount");
             console.log(rating + "rating");
           }
-
+          setRatingVisible(false)
         }} className='rating-stars-btn send-rating'>Send</button>
         <button onClick={() => {
           setRatingVisible(false)

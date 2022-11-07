@@ -48,7 +48,7 @@
 
 .recipe-single-ingredients {
   box-shadow: -2px 4px 46px 0px rgba(110,110,110,0.75);
-  text-align: center;
+
 }
 
 .recipe-single-ingredients, .recipe-single-step {
@@ -57,11 +57,20 @@
   margin: 1rem 0 3rem 0
 }
 
+
 .recipe-single-ingredient {
   margin: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 10% 60% 30%;
+  align-items: center;
+  justify-content: center;
 }
+
+.recipe-single-ingredient-data {
+  padding: .5rem;
+  text-align: center;
+}
+
 
 .recipe-single-step {
   margin: .5rem;
