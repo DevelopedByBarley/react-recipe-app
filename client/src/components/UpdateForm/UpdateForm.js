@@ -12,6 +12,7 @@ export function UpdateForm() {
   const id = param.id;
 
   const [recipeData, setRecipeData] = useState([])
+  const [categories, setCategories] = useState([])
   const [ingredients, setIngredients] = useState([{}])
   const [steps, setSteps] = useState([{}])
 
@@ -24,7 +25,8 @@ export function UpdateForm() {
           title: res.data.title,
           prepTime: res.data.prepTime,
           cookTime: res.data.cookTime,
-          comment: res.data.comment
+          comment: res.data.comment,
+          categorie: res.data.categorie.title
         })
         setIngredients(res.data.ingredients)
         setSteps(res.data.steps)
@@ -32,7 +34,12 @@ export function UpdateForm() {
   }, [])
 
 
-  console.log(recipeData);
+
+  useEffect(() => {
+    axios.get('/api/categories')
+      .then(res => setCategories(res.data))
+  }, [])
+
 
   return (
     <div className="form-container">
@@ -43,7 +50,8 @@ export function UpdateForm() {
           title: event.target.elements.title.value,
           prepTime: event.target.elements.prepTime.value,
           cookTime: event.target.elements.cookTime.value,
-          comment: event.target.elements.comment.value
+          comment: event.target.elements.comment.value,
+          categorie: event.target.elements.categories.value
         }
 
         const file = event.target.elements.fileName.files[0];
@@ -68,10 +76,27 @@ export function UpdateForm() {
       }}>
 
         <div>
+          <h3>Title:</h3>
           <input type="text" name="title" id="title" required defaultValue={recipeData.title} />
         </div>
 
+        <div className='categories'>
+          <h3>Categories:</h3>
+          <select name='categories'>
+            {categories.map((categorie) => {
+              {
+                if (categorie.title === recipeData.categorie) {
+                  return <option key={categorie._id} selected value={categorie._id}>{categorie.title}</option>
+                } else {
+                  return <option key={categorie._id} value={categorie._id}>{categorie.title}</option>
+                }
+              }
+            })}
+          </select>
+        </div>
+
         <div className="ingredients">
+          <h3>Ingredients:</h3>
           {ingredients?.map((ingredient, index) => {
             return (
               <div key={index}>
@@ -132,6 +157,7 @@ export function UpdateForm() {
 
 
         <div className='steps'>
+          <h3>Steps:</h3>
           {steps?.map((step, index) => {
             return (
               <div className='step' key={index}>
@@ -172,12 +198,15 @@ export function UpdateForm() {
 
 
         <div>
+          <h3>Preparation:</h3>
           <input type="number" name="prepTime" id="prepTime" defaultValue={recipeData.prepTime} required />
         </div>
         <div>
+          <h3>Cook:</h3>
           <input type="number" name="cookTime" id="cookTime" defaultValue={recipeData.cookTime} required />
         </div>
         <div>
+          <h3>Comment:</h3>
           <textarea rows="4" col="50" name="comment" defaultValue={recipeData.comment} required>
 
           </textarea>

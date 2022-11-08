@@ -40,23 +40,24 @@ export function RecipeSingle({ isThemeDark }) {
                 <div className='recipe-single-body'>
                   <div className='recipe-time'>
                     <div className='prepTime times'>
-                      <h5>Előkészités</h5>
+                      <h4>Előkészités</h4>
                       <p className='recipe-prepTime'>{recipe.prepTime} min</p>
                     </div>
                     <div className='cookTime times'>
-                      <h5>Sütés</h5>
+                      <h4>Sütés</h4>
                       <p className='recipe-cookTime'>{recipe.cookTime} min</p>
                     </div>
                     <div className='fullTime times'>
-                      <h5>Összesen</h5>
+                      <h4>Összesen</h4>
                       <p className='recipe-fullTime'>{recipe.fullTime} min</p>
                     </div>
                   </div>
                   <div className='title'>
                     <h1 className='recipe-title'>{recipe.title}</h1>
+                    <p className='recipe-categorie'>{recipe.categorie?.title}</p>
                   </div>
                   <div className='recipe-single-ingredients'>
-                    <h3>Hozzávalók</h3>
+                    <h3>Hozzávalók:</h3>
                     {recipe.ingredients?.map((ingredient, index) => {
                       return (
                         <div className='recipe-single-ingredient'>

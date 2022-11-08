@@ -4,6 +4,7 @@ const fs = require('fs')
 
 const Recipe = require('../database/models/recipeModel')
 const multer = require('multer');
+const Categories = require('../database/models/categories');
 
 
 const storage = multer.diskStorage({
@@ -31,14 +32,14 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const id = req.params.id;
-  console.log(id);
-  const recipeById = await Recipe.findOne({ _id: id })
+  const recipeById = await Recipe.findOne({ _id: id }).populate('categorie').exec();
+  console.log(recipeById);
+
+
   res.send(recipeById)
 })
 
 router.post('/', upload.single('fileName'), async (req, res) => {
-
-
   const fileName = req.file.filename;
   const recipeData = JSON.parse(req.body.data)
   const ingredientsData = JSON.parse(req.body.ingredients)
@@ -46,13 +47,14 @@ router.post('/', upload.single('fileName'), async (req, res) => {
 
   const recipe = {
     title: recipeData.title,
+    categorie: recipeData.categorie,
     ingredients: ingredientsData,
     steps: stepsData,
     prepTime: Number(recipeData.prepTime),
     cookTime: Number(recipeData.cookTime),
     fullTime: Number(recipeData.prepTime) + Number(recipeData.cookTime),
     comment: recipeData.comment,
-    imageURL: fileName
+    imageURL: fileName,
   }
 
 
@@ -91,6 +93,7 @@ router.put('/:recipeId', upload.single('fileName'), async (req, res) => {
 
   const recipeForUpdate = {
     title: recipeData.title,
+    categorie: recipeData.categorie,
     ingredients: ingredientsData,
     steps: stepsData,
     prepTime: Number(recipeData.prepTime),

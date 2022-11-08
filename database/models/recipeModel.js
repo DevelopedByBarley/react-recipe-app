@@ -6,6 +6,11 @@ const RecipeSchema = new Schema({
     type: String,
     required: true
   },
+  categorie: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+    ref: 'Categories'
+  },
   date: {
     type: Date,
     default: Date.now
