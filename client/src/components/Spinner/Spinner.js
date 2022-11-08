@@ -1,12 +1,12 @@
-import PulseLoader from "react-spinners/PulseLoader";
+import MoonLoader from "react-spinners/MoonLoader";
 import './Spinner.css'
 
 export function Spinner() {
   return (
     <div className="spinner">
-      <PulseLoader
-        color={"#c0f"}
-        size={30}
+      <MoonLoader
+        color={"#36d7b7"}
+        size={50}
         speedMultiplier={1}
         aria-label="Loading Spinner"
         data-testid="loader"

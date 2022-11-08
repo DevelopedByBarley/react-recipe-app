@@ -1,4 +1,7 @@
 import axios from "axios";
+import '../Form/Form.css'
+import { BiTrash } from 'react-icons/bi';
+import { BsFillPlusCircleFill } from 'react-icons/bs'
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import { v4 as uuidv4, v4 } from 'uuid';
@@ -33,6 +36,7 @@ export function UpdateForm() {
 
   return (
     <div className="form-container">
+      <h1 className="form-header">Update</h1>
       <form onSubmit={(event) => {
         event.preventDefault();
         const recipeData = {
@@ -71,14 +75,14 @@ export function UpdateForm() {
           {ingredients?.map((ingredient, index) => {
             return (
               <div key={index}>
-                <input type="text" defaultValue={ingredient.name} name={`ingredient-name-${index}`} required onChange={(event) => {
+                <input type="text" defaultValue={ingredient.name} name={`ingredient-name-${index}`} className="ingredient-input" required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].name = event.target.value;
                     return next
                   })
                 }} />
-                <input type="number" defaultValue={ingredient.quantity} name={`ingredient-quantity-${index}`} required onChange={(event) => {
+                <input type="number" defaultValue={ingredient.quantity} name={`ingredient-quantity-${index}`} className="ingredient-input" required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].quantity = event.target.value
@@ -98,7 +102,7 @@ export function UpdateForm() {
                   <option defaultValue="ml">ml</option>
                 </select>
                 <span>
-                  <button onClick={(event) => {
+                  <button className="form-delete-btn" onClick={(event) => {
                     event.preventDefault();
                     const index = ingredients.findIndex(item => item.id === ingredient.id);
                     setIngredients((prev) => {
@@ -107,12 +111,12 @@ export function UpdateForm() {
                       return next;
                     })
 
-                  }}>Delete</button>
+                  }}><BiTrash size={25} /></button>
                 </span>
               </div>
             )
           })}
-          <button className="add-ingredient" required onClick={(event) => {
+          <button className="add-ingredient add-btn" required onClick={(event) => {
             event.preventDefault();
             setIngredients((prev) => [...prev, {
               id: uuidv4(),
@@ -120,7 +124,7 @@ export function UpdateForm() {
               quantity: "",
               type: "g"
             }])
-          }}>+</button>
+          }}><BsFillPlusCircleFill size={25} /></button>
         </div>
 
 
@@ -138,7 +142,7 @@ export function UpdateForm() {
                     return next;
                   })
                 }} />
-                <span><button className='delete-step' onClick={(event) => {
+                <span><button className='delete-step form-delete-btn' onClick={(event) => {
                   event.preventDefault();
                   const index = steps.findIndex(item => item.id === step.id);
                   setSteps((prev) => {
@@ -146,21 +150,21 @@ export function UpdateForm() {
                     next.splice(index, 1);
                     return next;
                   })
-                }}>Delete</button></span>
+                }}><BiTrash size={25} /></button></span>
               </div>
             )
           })}
-          <button className='add-step' onClick={(event) => {
+          <button className='add-step add-btn' onClick={(event) => {
             event.preventDefault();
             setSteps((prev) => [...prev, {
               id: uuidv4(),
               content: ""
             }])
-          }}>+</button>
+          }}><BsFillPlusCircleFill size={25} /></button>
         </div>
 
         <div className='file'>
-          <input type="file" name="fileName" id="fileName" required/>
+          <input type="file" name="fileName" id="fileName" required />
         </div>
 
 
@@ -171,7 +175,7 @@ export function UpdateForm() {
           <input type="number" name="prepTime" id="prepTime" defaultValue={recipeData.prepTime} required />
         </div>
         <div>
-          <input type="number" name="cookTime" id="cookTime" defaultValue={recipeData.cookTime} required/>
+          <input type="number" name="cookTime" id="cookTime" defaultValue={recipeData.cookTime} required />
         </div>
         <div>
           <textarea rows="4" col="50" name="comment" defaultValue={recipeData.comment} required>
@@ -184,8 +188,10 @@ export function UpdateForm() {
 
 
 
-        <button>Send Recipe</button>
-      </form>
-    </div>
+        <div className="send">
+          <button className="send-button">Send Recipe</button>
+        </div>
+      </form >
+    </div >
   )
 }

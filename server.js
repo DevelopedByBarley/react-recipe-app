@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const connectToDb = require('./database/connection/connect')
 const recipeRouter = require('./routes/recipe');
+const ratingsRouter = require('./routes/ratings')
 
 console.log(__dirname)
 
@@ -14,10 +15,10 @@ console.log(__dirname)
 
 app.use(cors());
 app.use(express.static(__dirname + "/public"));
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.json());
+
 app.use('/api/recipes', recipeRouter);
+app.use('/api/ratings', ratingsRouter)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

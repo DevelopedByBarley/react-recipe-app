@@ -1,4 +1,6 @@
 import './Form.css'
+import { BiTrash } from 'react-icons/bi';
+import { BsFillPlusCircleFill } from 'react-icons/bs'
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
@@ -22,6 +24,8 @@ export function Form({ isThemeDark }) {
 
   return (
     <div className={`${isThemeDark ? "dark" : ""} form-container`}>
+      <h1 className='form-header'>Add Recipe</h1>
+
       <form onSubmit={(event) => {
         event.preventDefault();
         const recipeData = {
@@ -52,21 +56,24 @@ export function Form({ isThemeDark }) {
       }}>
 
         <div>
-          <input type="text" name="title" id="title" required/>
+          <h3>Title:</h3>
+          <input type="text" name="title" id="title" required />
+
         </div>
 
         <div className="ingredients">
+          <h3>Ingredients:</h3>
           {ingredients.map((ingredient, index) => {
             return (
               <div key={index}>
-                <input type="text" placeholder='name' name={`ingredient-name-${index}`} required onChange={(event) => {
+                <input type="text" placeholder='name' className='ingredient-input' name={`ingredient-name-${index}`} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].name = event.target.value;
                     return next
                   })
                 }} />
-                <input type="number" placeholder='quantity' name={`ingredient-quantity-${index}`} required onChange={(event) => {
+                <input type="number" placeholder='quantity' className='ingredient-input' name={`ingredient-quantity-${index}`} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].quantity = event.target.value
@@ -80,12 +87,12 @@ export function Form({ isThemeDark }) {
                     return next
                   })
                 }}>
-                  <option defaultValue="g" selected>g</option>
+                  <option defaultValue="g" >g</option>
                   <option defaultValue="kg">kg</option>
                   <option defaultValue="ml">ml</option>
                 </select>
                 <span>
-                  <button onClick={(event) => {
+                  <button className='form-delete-btn' onClick={(event) => {
                     event.preventDefault();
                     const index = ingredients.findIndex(item => item.id === ingredient.id);
                     setIngredients((prev) => {
@@ -94,12 +101,12 @@ export function Form({ isThemeDark }) {
                       return next;
                     })
 
-                  }}>Delete</button>
+                  }}><BiTrash size={25} /></button>
                 </span>
               </div>
             )
           })}
-          <button className="add-ingredient" onClick={(event) => {
+          <button className="add-ingredient add-btn" onClick={(event) => {
             event.preventDefault();
             setIngredients((prev) => [...prev, {
               id: uuidv4(),
@@ -107,7 +114,7 @@ export function Form({ isThemeDark }) {
               quantity: "",
               type: "g"
             }])
-          }}>+</button>
+          }}><BsFillPlusCircleFill size={25} /></button>
         </div>
 
 
@@ -115,9 +122,10 @@ export function Form({ isThemeDark }) {
 
 
         <div className='steps'>
+          <h3>Steps:</h3>
           {steps.map((step, index) => {
             return (
-              <div className='step'>
+              <div key={index}>
                 <input type="text" name={`steps-content-${index}`} placeholder="step" required onChange={(event) => {
                   setSteps((prev) => {
                     const next = [...prev];
@@ -125,7 +133,7 @@ export function Form({ isThemeDark }) {
                     return next;
                   })
                 }} />
-                <span><button className='delete-step' required onClick={(event) => {
+                <span><button className='delete-step form-delete-btn' required onClick={(event) => {
                   event.preventDefault();
                   const index = steps.findIndex(item => item.id === step.id);
                   setSteps((prev) => {
@@ -133,37 +141,33 @@ export function Form({ isThemeDark }) {
                     next.splice(index, 1);
                     return next;
                   })
-                }}>Delete</button></span>
+                }}><BiTrash size={25} /></button></span>
               </div>
             )
           })}
-          <button className='add-step' required onClick={(event) => {
+          <button className='add-step add-btn' required onClick={(event) => {
             event.preventDefault();
             setSteps((prev) => [...prev, {
               id: uuidv4(),
               content: ""
             }])
-          }}>+</button>
+          }}><BsFillPlusCircleFill size={25} /></button>
         </div>
 
         <div className='file'>
-          <input type="file" name="fileName" id="fileName" required/>
+          <input type="file" name="fileName" id="fileName" required />
         </div>
-
-
-
-
 
         <div>
-          <input type="number" name="prepTime" id="prepTime" required/>
+          <h3>Preparation:</h3>
+          <input type="number" name="prepTime" id="prepTime" required />
         </div>
         <div>
-          <input type="number" name="cookTime" id="cookTime" required/>
+          <h3>Cook:</h3>
+          <input type="number" name="cookTime" id="cookTime" required />
         </div>
         <div>
-          <textarea rows="4" col="50" name="comment" required>
-            comment...
-          </textarea>
+          <textarea rows="10" col="40" name="comment" defaultValue={"comment..."} required></textarea>
         </div>
 
 
@@ -171,7 +175,9 @@ export function Form({ isThemeDark }) {
 
 
 
-        <button>Send Recipe</button>
+        <div className='send'>
+          <button className='send-button' type='submit'>Send Recipe</button>
+        </div>
       </form>
     </div>
   )

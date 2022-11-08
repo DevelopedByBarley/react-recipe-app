@@ -1,12 +1,13 @@
 import './RatingStars.css'
+import axios from 'axios'
 import { useState } from 'react';
 import { BsStar } from 'react-icons/bs'
 
 export function RatingStars({ setRatingVisible }) {
-
   const stars = Array(5).fill(0)
-  const [rating, setRating] = useState(0)
-  const [ratingCount, setRatingCount] = useState(1)
+  const [ratings, setRatings] = useState(0)
+
+  
 
   return (
     <div className='rating-stars-container'>
@@ -17,14 +18,12 @@ export function RatingStars({ setRatingVisible }) {
       <div>
         {stars.map((_, index) => {
           return (
-
             <BsStar
               key={index}
               size={30}
-              color={rating > index ? "orange" : ""}
-              background={"orange"}
+              color={ratings > index ? "orange" : ""}
               onClick={() => {
-                setRating(index + 1)
+                setRatings(index + 1)
               }}
             />
 
@@ -33,11 +32,7 @@ export function RatingStars({ setRatingVisible }) {
       </div>
       <div className='rating-stars-btns'>
         <button onClick={() => {
-          if (rating > 0) {
-            setRatingCount((prev) => prev + 1);
-            console.log(ratingCount + "ratingCount");
-            console.log(rating + "rating");
-          }
+          axios.put('/api/ratings/', { ratings: ratings })
           setRatingVisible(false)
         }} className='rating-stars-btn send-rating'>Send</button>
         <button onClick={() => {

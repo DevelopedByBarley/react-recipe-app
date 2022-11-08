@@ -1,6 +1,95 @@
 .form-container {
-  display: flex;
-  align-items: center;
+  padding: 1rem;
+}
+
+.form-container .form-header {
+  text-align: center;
+  margin: 2rem;
+}
+
+#title {
+  width: 90%;
+}
+
+
+input:focus {
+  transition: all .4s ease-in-out;
+  padding: .4rem;
+}
+
+input {
+  width: 80%;
+  margin: .4rem;
+  padding: .2rem;
+}
+
+.file {
+  width: 100%;
   justify-content: center;
-  flex-direction: column;
+  margin: 2rem;
+}
+
+select {
+  padding: .2rem;
+  margin: .1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.form-delete-btn {
+  background: none;
+  border: none;
+  position: relative;
+  top: 5px;
+  color: #FF6464;
+}
+
+.add-btn {
+  color: #2192FF;
+  font-weight: bolder;
+  background: none;
+  border: none;
+  margin: .5rem;
+}
+
+
+.ingredients,
+.steps {
+  margin: 1rem 0;
+}
+
+.ingredient-input {
+  width: 35%;
+  margin: .2rem;
+  padding: .2rem;
+}
+
+
+
+#prepTime {
+  width: 90%;
+}
+
+#cookTime {
+  width: 90%;
+}
+
+
+textarea {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.send {
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.send-button {
+  background-color: #57af50;
+  color: white;
+  padding: .5rem 1rem;
 }

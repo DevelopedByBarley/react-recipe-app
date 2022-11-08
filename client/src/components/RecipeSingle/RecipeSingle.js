@@ -60,9 +60,9 @@ export function RecipeSingle({ isThemeDark }) {
                     {recipe.ingredients?.map((ingredient, index) => {
                       return (
                         <div className='recipe-single-ingredient'>
-                          <div className='ingredient-index'>{index + 1}. </div>
-                          <div className='recipe-single-ingredient-name'>{ingredient.name}</div>
-                          <div className='recipe-single-ingredient-data'> {ingredient.quantity} {ingredient.type}</div>
+                          <p className='ingredient-index'>{index + 1}. </p>
+                          <p className='recipe-single-ingredient-name'>{ingredient.name}</p>
+                          <p className='recipe-single-ingredient-data'> {ingredient.quantity} {ingredient.type}</p>
                         </div>
                       )
                     })}
@@ -78,6 +78,7 @@ export function RecipeSingle({ isThemeDark }) {
                     })}
                   </div>
                   <div className='recipe-single-comment'>
+                    <h1>Comment:</h1>
                     <p className='comment'>{recipe.comment}</p>
                   </div>
                 </div>

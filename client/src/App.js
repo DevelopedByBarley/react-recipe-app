@@ -9,6 +9,7 @@ import { UpdateForm } from './components/UpdateForm/UpdateForm';
 import { useEffect, useState } from 'react';
 import { WelcomePage } from './components/WelcomePage/WelcomePage';
 import { RatingStars } from './components/RatingStars/RatingStars';
+import { HomePage } from './components/HomePage/HomePage';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setRatingVisible(true)
-    }, 320000)
+    }, 300000)
   }, [])
 
 
@@ -27,7 +28,7 @@ function App() {
       <Nav isThemeDark={isThemeDark} setThemeDark={setThemeDark} />
       <Routes>
         <Route path='/' element={<WelcomePage isThemeDark={isThemeDark} />} />
-        <Route path='/home' element={"<WelcomePage isThemeDark={isThemeDark}/>"} />
+        <Route path='/home' element={<HomePage />} />
         <Route path='/recipes' element={<RecipeList isThemeDark={isThemeDark} />} />
         <Route path='/recipes/add' element={<Form isThemeDark={isThemeDark} />} />
         <Route path='/recipe-single/:id' element={<RecipeSingle isThemeDark={isThemeDark} />} />
