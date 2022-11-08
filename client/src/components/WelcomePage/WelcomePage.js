@@ -43,8 +43,11 @@ export function WelcomePage({ isThemeDark }) {
         (
           <div className='welcome-page'>
             <div className={`${isThemeDark ? "dark" : ""}`}>
-              <h1>You have {recipes.length} Recipes!</h1>
-              <Link className='link' to="/home">LetsSee!</Link>
+              <div className='welcome'>
+                <h1>Welcome to my Recipe App</h1>
+              </div>
+              <h1>We have {recipes.length} Recipes!</h1>
+              <Link className='link' to="/home">Let's See!</Link>
               <div className='ratings'>
                 <div className='numberOfRatings'>
                   <h1>{ratings?.length} értékelés!</h1>

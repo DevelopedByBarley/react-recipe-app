@@ -65,16 +65,17 @@
 .recipe-single-step {
   border-radius: 15px;
   padding: .5rem;
-  margin: 1rem 0 3rem 0
+  margin: 1rem 0 3rem 0;
 }
 
 
 .recipe-single-ingredient {
   margin: 1rem;
   display: grid;
-  grid-template-columns: 10% 60% 30%;
+  grid-template-columns: 20% 20% 20%;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .recipe-single-ingredient-data {
@@ -87,6 +88,7 @@
   margin: .5rem;
   background-color: #FF731D;
   color: white;
+  text-align: center;
 }
 
 .step-index {

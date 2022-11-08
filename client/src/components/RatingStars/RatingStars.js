@@ -32,7 +32,9 @@ export function RatingStars({ setRatingVisible }) {
       </div>
       <div className='rating-stars-btns'>
         <button onClick={() => {
-          axios.put('/api/ratings/', { ratings: ratings })
+          if( ratings > 0) {
+            axios.put('/api/ratings/', { ratings: ratings })
+          }
           setRatingVisible(false)
         }} className='rating-stars-btn send-rating'>Elküld</button>
         <button onClick={() => {

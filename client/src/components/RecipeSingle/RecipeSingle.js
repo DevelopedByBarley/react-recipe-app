@@ -61,7 +61,7 @@ export function RecipeSingle({ isThemeDark }) {
                     {recipe.ingredients?.map((ingredient, index) => {
                       return (
                         <div className='recipe-single-ingredient'>
-                          <p className='ingredient-index'>{index + 1}. </p>
+                            <p className='ingredient-index'>{index + 1}. </p>
                           <p className='recipe-single-ingredient-name'>{ingredient.name}</p>
                           <p className='recipe-single-ingredient-data'> {ingredient.quantity} {ingredient.type}</p>
                         </div>

@@ -5,8 +5,8 @@ export function Spinner() {
   return (
     <div className="spinner">
       <MoonLoader
-        color={"#36d7b7"}
-        size={50}
+        color={"black"}
+        size={70}
         speedMultiplier={1}
         aria-label="Loading Spinner"
         data-testid="loader"

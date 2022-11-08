@@ -8,7 +8,8 @@ const cors = require('cors');
 const connectToDb = require('./database/connection/connect')
 const recipeRouter = require('./routes/recipe');
 const ratingsRouter = require('./routes/ratings');
-const categoriesRouter = require('./routes/categories')
+const categoriesRouter = require('./routes/categories');
+const homeRouter = require('./routes/home')
 
 
 app.use(cors());
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 app.use('/api/recipes', recipeRouter);
 app.use('/api/ratings', ratingsRouter)
 app.use('/api/categories', categoriesRouter)
+app.use('/api/home', homeRouter)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
