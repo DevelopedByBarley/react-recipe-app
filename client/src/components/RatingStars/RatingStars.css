@@ -3,11 +3,6 @@
   margin: 1rem;
 }
 
-.dark {
-  transition: all .4s ease-in-out;
-  color: white;
-  background-color: hsla(189, 100%, 12%, 1);
-}
 
 .rating-stars-container {
   position: fixed;

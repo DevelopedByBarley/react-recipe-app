@@ -10,12 +10,20 @@
   }
 }
 
+.recipeList-container .card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .recipeList-container .card .card-header img {
-  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .card {
   margin-bottom: 1rem;
+  box-shadow: 10px 10px 14px 0px rgba(143,138,138,0.75);
 }
 
 .card:hover {
@@ -24,7 +32,6 @@
 }
 
 .card-content {
-  box-shadow: 10px 10px 14px 0px rgba(143,138,138,0.75);
   text-align: center;
 }
 

@@ -58,6 +58,7 @@
 
 .recipe-single-ingredients {
   box-shadow: -2px 4px 46px 0px rgba(110, 110, 110, 0.75);
+  text-align: center;
 
 }
 
@@ -112,11 +113,6 @@
   margin: 2rem;
 }
 
-.dark {
-  transition: all .4s ease-in-out;
-  color: white;
-  background-color: hsla(189, 100%, 12%, 1)
-}
 
 
 @media (min-width: 768px) {
@@ -130,4 +126,10 @@
     width: 60%;
     margin: 3rem auto;
   }
+}
+
+.dark {
+  transition: all .4s ease-in-out;
+  color: white;
+  background-color: hsla(189, 100%, 12%, 1)
 }
