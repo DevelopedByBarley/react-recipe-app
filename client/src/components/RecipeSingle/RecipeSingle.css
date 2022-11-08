@@ -15,9 +15,13 @@
   border-radius: 15px;
 }
 
-.recipe-single-content .title {
+.recipe-header {
   text-align: center;
   padding: 1rem;
+}
+
+.recipe-header .recipe-title {
+  margin: 1rem;
 }
 
 .recipe-single-body {
@@ -28,7 +32,7 @@
   min-height: 500px;
 }
 
-.recipe-single-body h5 {
+.recipe-single-body h4 {
   margin: .6rem;
 }
 

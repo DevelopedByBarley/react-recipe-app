@@ -3,12 +3,19 @@
   margin: 1rem;
 }
 
+.dark {
+  transition: all .4s ease-in-out;
+  color: white;
+  background-color: hsla(189, 100%, 12%, 1);
+}
+
 .rating-stars-container {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: white;
+  color: black;
   width: 80%;
   padding: 2rem;
   display: flex;
@@ -16,6 +23,14 @@
   justify-content: center;
   flex-direction: column;
   z-index: 101;
+  border: 1px solid;
+}
+
+@media(min-width: 768px) {
+  .rating-stars-container {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
 
 .rating-stars-btns {
@@ -25,4 +40,17 @@
 .rating-stars-btn {
   margin: 0 .5rem;
   padding: .5rem 1rem;
+}
+
+.rating-stars-btn {
+  color: white;
+  font-weight: bolder;
+}
+
+.send-rating {
+  background-color: #5DA7DB;
+}
+
+.close-rating {
+  background-color: orange;
 }

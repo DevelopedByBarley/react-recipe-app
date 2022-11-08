@@ -40,7 +40,7 @@ export function RecipeSingle({ isThemeDark }) {
                 <div className='recipe-single-body'>
                   <div className='recipe-time'>
                     <div className='prepTime times'>
-                      <h4>Előkészités</h4>
+                      <h4>Elökészités</h4>
                       <p className='recipe-prepTime'>{recipe.prepTime} min</p>
                     </div>
                     <div className='cookTime times'>
@@ -52,7 +52,7 @@ export function RecipeSingle({ isThemeDark }) {
                       <p className='recipe-fullTime'>{recipe.fullTime} min</p>
                     </div>
                   </div>
-                  <div className='title'>
+                  <div className='recipe-header'>
                     <h1 className='recipe-title'>{recipe.title}</h1>
                     <p className='recipe-categorie'>{recipe.categorie?.title}</p>
                   </div>
