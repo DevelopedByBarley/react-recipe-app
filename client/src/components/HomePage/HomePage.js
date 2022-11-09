@@ -47,26 +47,23 @@ export function HomePage({ isThemeDark }) {
             {lastFiveRecipe.map((recipe) => {
               return (
                 <div className='latest-five-recipe-card'>
-                  <div className='latest-recipe-header'>
-                    <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}>
+                  <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
+                    <div className='latest-recipe-header'>
+                      <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}>
 
-                    </div>
-                    <div className='latest-recipe-body'>
-                      <div className='latest-recipe-title'>
-                        <h1>{recipe.title}</h1>
                       </div>
-                      <div className='latest-recipe-content'>
-                        <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime} mins
-                        <MdOutlineMenuBook size={30} className='recipe-icon' />{recipe.ingredients.length} ingredient
-                        <IoFootstepsOutline size={30} className='recipe-icon' />{recipe.steps.length} step
+                      <div className='latest-recipe-body'>
+                        <div className='latest-recipe-title'>
+                          <h1>{recipe.title}</h1>
+                        </div>
+                        <div className='latest-recipe-content'>
+                          <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime}mins
+                          <MdOutlineMenuBook size={30} className='recipe-icon' />{recipe.ingredients.length} ingredient
+                          <IoFootstepsOutline size={30} className='recipe-icon' />{recipe.steps.length} step
+                        </div>
                       </div>
                     </div>
-                    <div className='latest-recipe-view-btn'>
-                      <Link to={`/recipe-single/${recipe._id}`}>
-                        <button className='view-btn'><IoEyeSharp size={40} /></button>
-                      </Link>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               )
             })}
@@ -99,22 +96,19 @@ export function HomePage({ isThemeDark }) {
             {hungarianRecipes.map((recipe) => {
               return (
                 <div className='hungarian-five-cards'>
-                  <div className='hungarian-card-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
-                  <div className='hungarian-card-body'>
-                    <div className='hungarian-card-title'>
-                      <h1>{recipe.title}</h1>
+                  <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
+                    <div className='hungarian-card-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
+                    <div className='hungarian-card-body'>
+                      <div className='hungarian-card-title'>
+                        <h1>{recipe.title}</h1>
+                      </div>
+                      <div className='hungarian-card-content'>
+                        <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime} mins
+                        <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} ingredient
+                        <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} step
+                      </div>
                     </div>
-                    <div className='hungarian-card-content'>
-                      <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime} mins
-                      <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} ingredient
-                      <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} step
-                    </div>
-                    <div className='hungarian-five-view-btn'>
-                      <Link to={`/recipe-single/${recipe._id}`}>
-                        <button className='view-btn'><IoEyeSharp size={40} /></button>
-                      </Link>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               )
             })}
@@ -134,22 +128,19 @@ export function HomePage({ isThemeDark }) {
               {fastRecipes.map((recipe) => {
                 return (
                   <div className='fast-recipes-card'>
-                    <div className='fast-recipes-card-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
-                    <div className='fast-recipes-card-body'>
-                      <div className='fast-recipes-card-title'>
-                        <h1>{recipe.title}</h1>
+                    <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
+                      <div className='fast-recipes-card-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
+                      <div className='fast-recipes-card-body'>
+                        <div className='fast-recipes-card-title'>
+                          <h1>{recipe.title}</h1>
+                        </div>
+                        <div className='fast-recipes-card-content'>
+                          <CiStopwatch size={30} className='recipe-icon' />{recipe.fullTime}  mins
+                          <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} ingredient
+                          <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} step
+                        </div>
                       </div>
-                      <div className='fast-recipes-card-content'>
-                        <CiStopwatch size={30} className='recipe-icon' />{recipe.fullTime}  mins
-                        <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} ingredient
-                        <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} step
-                      </div>
-                      <div className='fast-recipes-view-btn'>
-                        <Link to={`/recipe-single/${recipe._id}`}>
-                          <button className='view-btn'><IoEyeSharp size={40} /></button>
-                        </Link>
-                      </div>
-                    </div>
+                    </Link>
                   </div>
                 )
               })}

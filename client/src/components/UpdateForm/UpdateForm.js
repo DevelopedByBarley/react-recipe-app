@@ -126,9 +126,20 @@ export function UpdateForm() {
                   })
 
                 }}>
-                  <option defaultValue="g">g</option>
+                  <option defaultValue="g" >g</option>
+                  <option defaultValue="dkg" >dkg</option>
                   <option defaultValue="kg">kg</option>
                   <option defaultValue="ml">ml</option>
+                  <option defaultValue="cl">cl</option>
+                  <option defaultValue="dl">dl</option>
+                  <option defaultValue="l">l</option>
+                  <option defaultValue="db">db</option>
+                  <option defaultValue="evőkanál">evőkanál</option>
+                  <option defaultValue="teáskanál">teáskanál</option>
+                  <option defaultValue="gerezd">gerezd</option>
+                  <option defaultValue="csipet">csipet</option>
+                  <option defaultValue="csomag">csomag</option>
+                  <option defaultValue="doboz">doboz</option>
                 </select>
                 <span>
                   <button className="form-delete-btn" onClick={(event) => {

@@ -4,13 +4,13 @@
   text-align: center;
 }
 
-.view-btn {
-  background: white;
-  border: none;
-}
-
 .recipe-icon { 
   margin-left: .5rem;
+}
+
+.homepage-link {
+  text-decoration: none;
+  color: black;
 }
 /*Home-Container-Styles*/
 
