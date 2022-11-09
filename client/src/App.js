@@ -24,11 +24,11 @@ function App() {
 
 
   return (
-    <div className={`${isThemeDark ? "dark" : ""} app-container`}>
+    <div className="app-container">
       <Nav isThemeDark={isThemeDark} setThemeDark={setThemeDark} />
       <Routes>
         <Route path='/' element={<WelcomePage isThemeDark={isThemeDark} />} />
-        <Route path='/home' element={<HomePage />} />
+        <Route path='/home' element={<HomePage isThemeDark={isThemeDark} />} />
         <Route path='/recipes' element={<RecipeList isThemeDark={isThemeDark} />} />
         <Route path='/recipes/add' element={<Form isThemeDark={isThemeDark} />} />
         <Route path='/recipe-single/:id' element={<RecipeSingle isThemeDark={isThemeDark} />} />

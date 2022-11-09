@@ -15,6 +15,7 @@ export function UpdateForm() {
   const [categories, setCategories] = useState([])
   const [ingredients, setIngredients] = useState([{}])
   const [steps, setSteps] = useState([{}])
+  const [fileNameForDelete, setFileNameForDelete] = useState()
 
 
 
@@ -26,12 +27,14 @@ export function UpdateForm() {
           prepTime: res.data.prepTime,
           cookTime: res.data.cookTime,
           comment: res.data.comment,
-          categorie: res.data.categorie.title
+          categorie: res.data.categorie.title,
         })
+        setFileNameForDelete(res.data.imageURL)
         setIngredients(res.data.ingredients)
         setSteps(res.data.steps)
       })
   }, [])
+
 
 
 
@@ -51,7 +54,7 @@ export function UpdateForm() {
           prepTime: event.target.elements.prepTime.value,
           cookTime: event.target.elements.cookTime.value,
           comment: event.target.elements.comment.value,
-          categorie: event.target.elements.categories.value
+          categorie: event.target.elements.categories.value,
         }
 
         const file = event.target.elements.fileName.files[0];
@@ -62,6 +65,7 @@ export function UpdateForm() {
         formData.append('ingredients', JSON.stringify(ingredients))
         formData.append('steps', JSON.stringify(steps));
         formData.append('fileName', file)
+        formData.append('fileNameForDelete', fileNameForDelete)
         axios({
           method: "put",
           url: `/api/recipes/${id}`,
@@ -190,7 +194,7 @@ export function UpdateForm() {
         </div>
 
         <div className='file'>
-          <input type="file" name="fileName" id="fileName" required />
+          <input type="file" name="fileName" id="fileName" />
         </div>
 
 

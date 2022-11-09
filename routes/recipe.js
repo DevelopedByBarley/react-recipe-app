@@ -33,7 +33,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const id = req.params.id;
   const recipeById = await Recipe.findOne({ _id: id }).populate('categorie').exec();
-  console.log(recipeById);
 
 
   res.send(recipeById)
@@ -83,13 +82,22 @@ router.delete('/:recipeId', async (req, res) => {
 })
 
 router.put('/:recipeId', upload.single('fileName'), async (req, res) => {
-  const fileName = req.file.filename;
+  let fileName;
+  if (req.file) {
+    fileName = req.file.filename;
+  }
   const recipeData = JSON.parse(req.body.data)
   const ingredientsData = JSON.parse(req.body.ingredients)
   const stepsData = JSON.parse(req.body.steps)
   const id = req.params.recipeId;
+  const fileNameForDelete = req.body.fileNameForDelete
 
-  
+  fs.unlink(`./public/assets/files/${fileNameForDelete}`, function (err) {
+    if (err) return console.log(err);
+    console.log('file deleted successfully');
+  });
+
+
 
   const recipeForUpdate = {
     title: recipeData.title,

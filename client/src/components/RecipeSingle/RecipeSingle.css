@@ -1,11 +1,19 @@
 .recipe-single-container {
   min-height: 100vh;
   color: black;
-  background-color: aliceblue;
+  background-color: white;
 }
 
-.recipe-single-image img {
+.recipe-single-image {
+  height: 500px;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .recipe-single-image {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
 
 
@@ -116,10 +124,7 @@
 
 
 @media (min-width: 768px) {
-  .recipe-single-image {
-    width: 40%;
-    margin: 0 auto;
-  }
+
 
   .recipe-single-ingredients,
   .recipe-single-step {

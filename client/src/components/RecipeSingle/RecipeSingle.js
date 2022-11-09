@@ -34,9 +34,7 @@ export function RecipeSingle({ isThemeDark }) {
             <div className={`recipe-single-container ${isThemeDark ? "dark" : ""}`}>
 
               <div className='recipe-single-content'>
-                <div className='recipe-single-image'>
-                  <img src={`/assets/files/${recipe.imageURL}`} />
-                </div>
+                <div className='recipe-single-image' style={ { "background": `url(${`/assets/files/${recipe.imageURL}`}) center center`, "backgroundSize": "cover" }}></div>
                 <div className='recipe-single-body'>
                   <div className='recipe-time'>
                     <div className='prepTime times'>

@@ -11,15 +11,9 @@
 }
 
 .recipeList-container .card .card-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 300px
 }
 
-.recipeList-container .card .card-header img {
-  max-width: 400px;
-  max-height: 400px;
-}
 
 .card {
   margin-bottom: 1rem;
@@ -35,7 +29,7 @@
   text-align: center;
 }
 
-.card-title h1{
+.card-title h3{
   padding: 1rem;
 }
 

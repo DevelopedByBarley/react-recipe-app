@@ -1,16 +1,15 @@
-import MoonLoader from "react-spinners/MoonLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 import './Spinner.css'
 
 export function Spinner() {
   return (
     <div className="spinner">
-      <MoonLoader
-        color={"black"}
-        size={70}
+      <ClipLoader
+        color={"#c06a29"}
+        size={90}
         speedMultiplier={1}
         aria-label="Loading Spinner"
         data-testid="loader"
-      />
-    </div>
+      /></div>
   )
 }

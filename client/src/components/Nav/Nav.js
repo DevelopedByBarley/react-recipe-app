@@ -1,8 +1,8 @@
 import './Nav.css'
 import { Link } from 'react-router-dom'
-import { SwitchTheme } from '../SwitchTheme/SwitchTheme'
 import { useState } from 'react'
 import { RiMenuFill } from 'react-icons/ri'
+import { IoRestaurantSharp } from 'react-icons/io5'
 
 
 export function Nav({ isThemeDark, setThemeDark }) {
@@ -18,6 +18,9 @@ export function Nav({ isThemeDark, setThemeDark }) {
       <nav className={`${isMenuActive ? "active" : ""}`}>
         <div className={`nav-wrapper ${isThemeDark ? "dark" : ""}`}>
           <ul>
+            <li onClick={() => setMenuActive(false)} >
+              <Link className='link' to="/"><IoRestaurantSharp size={25}/></Link>
+            </li>
             <li onClick={() => setMenuActive(false)}>
               <Link className='link' to="/home">Home</Link>
             </li>
@@ -29,7 +32,6 @@ export function Nav({ isThemeDark, setThemeDark }) {
             </li>
           </ul>
 
-          <SwitchTheme isThemeDark={isThemeDark} setThemeDark={setThemeDark} />
         </div>
       </nav>
     </header >

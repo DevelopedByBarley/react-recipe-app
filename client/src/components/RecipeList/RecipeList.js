@@ -39,19 +39,19 @@ export function RecipeList({ isThemeDark }) {
               return (
 
                 <div className='card' key={recipe._id}>
-                  <div className='card-header'>
-                    <img src={`/assets/files/${recipe.imageURL}`} alt="recipe-picture" />
+                  <div className='card-header' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) center center`, "backgroundSize": "cover", "height": "300px" }}>
+
                   </div>
                   <div className='card-content'>
                     <div className='card-body'>
                       <div className='card-title'>
-                        <h1>{recipe.title}</h1>
+                        <h3>{recipe.title}</h3>
                       </div>
                       <hr></hr>
 
                       <div className='time-datas'>
                         <p className='recipe-data'>
-                          <CiStopwatch className='recipe-icon' size={25} /> 
+                          <CiStopwatch className='recipe-icon' size={25} />
                           <span> {recipe.fullTime}</span> minutes
                         </p>
                         <p className='recipe-data'>
@@ -68,14 +68,14 @@ export function RecipeList({ isThemeDark }) {
                     <div className='card-footer'>
 
                       <Link to={`/recipe-single/${recipe._id}`}>
-                        <button style={{"color": `${isThemeDark ? "white" : "black"}`}} className='view-btn card-btn'>
+                        <button style={{ "color": `${isThemeDark ? "white" : "black"}` }} className='view-btn card-btn'>
                           <IoEyeSharp size={30} />
                         </button>
                       </Link>
                       <Link to={`/recipe-update/${recipe._id}`}>
-                        <button style={{"color": `${isThemeDark ? "white" : "black"}`}} className='update-btn card-btn'><HiOutlineRefresh size={25} /></button>
+                        <button style={{ "color": `${isThemeDark ? "white" : "black"}` }} className='update-btn card-btn'><HiOutlineRefresh size={25} /></button>
                       </Link>
-                      <button style={{"color": `${isThemeDark ? "white" : "black"}`}} className='delete-btn card-btn' onClick={(event) => {
+                      <button style={{ "color": `${isThemeDark ? "white" : "black"}` }} className='delete-btn card-btn' onClick={(event) => {
                         event.preventDefault();
                         axios.delete(`/api/recipes/${recipe._id}`)
                           .then((res) => {
