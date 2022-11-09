@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { Spinner } from "../Spinner/Spinner";
 import { IoFootstepsOutline } from 'react-icons/io5'
+import { GoPrimitiveDot } from 'react-icons/go'
 
 
 export function RecipeSingle({ isThemeDark }) {
@@ -31,10 +32,10 @@ export function RecipeSingle({ isThemeDark }) {
           )
           :
           (
-            <div className={`recipe-single-container ${isThemeDark ? "dark" : ""}`}>
+            <div className="recipe-single-container" >
 
               <div className='recipe-single-content'>
-                <div className='recipe-single-image' style={ { "background": `url(${`/assets/files/${recipe.imageURL}`}) center center`, "backgroundSize": "cover" }}></div>
+                <div className='recipe-single-image' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) center center`, "backgroundSize": "cover" }}></div>
                 <div className='recipe-single-body'>
                   <div className='recipe-time'>
                     <div className='prepTime times'>
@@ -59,9 +60,8 @@ export function RecipeSingle({ isThemeDark }) {
                     {recipe.ingredients?.map((ingredient, index) => {
                       return (
                         <div className='recipe-single-ingredient'>
-                            <p className='ingredient-index'>{index + 1}. </p>
                           <p className='recipe-single-ingredient-name'>{ingredient.name}</p>
-                          <p className='recipe-single-ingredient-data'> {ingredient.quantity} {ingredient.type}</p>
+                          <p className='recipe-single-ingredient-data'> {ingredient.quantity} {ingredient.quantityType}</p>
                         </div>
                       )
                     })}

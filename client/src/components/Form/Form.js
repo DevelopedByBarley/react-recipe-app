@@ -14,7 +14,7 @@ export function Form({ isThemeDark }) {
     id: uuidv4(),
     name: "",
     quantity: "",
-    type: "g"
+    quantityType: "g"
   }])
 
   const [steps, setSteps] = useState([{
@@ -92,23 +92,34 @@ export function Form({ isThemeDark }) {
                   return next
                 })
               }} />
-              <input type="number" placeholder='quantity' className='ingredient-input' name={`ingredient-quantity-${index}`} required onChange={(event) => {
+              <input type="text" placeholder='quantity' className='ingredient-input' name={`ingredient-quantity-${index}`} required onChange={(event) => {
                 setIngredients((prev) => {
                   const next = [...prev];
                   next[index].quantity = event.target.value
                   return next
                 })
               }} />
-              <select name={`ingredient-type-${index}`} defaultValue={"g"} required onChange={(event) => {
+              <select name={`ingredient-quantity-type-${index}`} defaultValue={"g"} required onChange={(event) => {
                 setIngredients((prev) => {
                   const next = [...prev];
-                  next[index].type = event.target.value
+                  next[index].quantityType = event.target.value
                   return next
                 })
               }}>
                 <option defaultValue="g" >g</option>
+                <option defaultValue="dkg" >dkg</option>
                 <option defaultValue="kg">kg</option>
                 <option defaultValue="ml">ml</option>
+                <option defaultValue="cl">cl</option>
+                <option defaultValue="dl">dl</option>
+                <option defaultValue="l">l</option>
+                <option defaultValue="db">db</option>
+                <option defaultValue="evőkanál">evőkanál</option>
+                <option defaultValue="teáskanál">teáskanál</option>
+                <option defaultValue="gerezd">gerezd</option>
+                <option defaultValue="csipet">csipet</option>
+                <option defaultValue="csomag">csomag</option>
+                <option defaultValue="doboz">doboz</option>
               </select>
               <span>
                 <button className='form-delete-btn' onClick={(event) => {
@@ -131,7 +142,7 @@ export function Form({ isThemeDark }) {
             id: uuidv4(),
             name: "",
             quantity: "",
-            type: "g"
+            quantityType: "g"
           }])
         }}><BsFillPlusCircleFill size={25} /></button>
       </div>

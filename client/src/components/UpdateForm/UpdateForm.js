@@ -118,10 +118,10 @@ export function UpdateForm() {
                     return next
                   })
                 }} />
-                <select name={`ingredient-type-${index}`} defaultValue={ingredient.type} required onChange={(event) => {
+                <select name={`ingredient-quantity-type-${index}`} defaultValue={ingredient.quantityType} required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
-                    next[index].type = event.target.value
+                    next[index].quantityType = event.target.value
                     return next
                   })
 
@@ -151,7 +151,7 @@ export function UpdateForm() {
               id: uuidv4(),
               name: "",
               quantity: "",
-              type: "g"
+              quantityType: "g"
             }])
           }}><BsFillPlusCircleFill size={25} /></button>
         </div>

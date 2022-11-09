@@ -107,7 +107,9 @@
 
 
 /* RANDOM-ONE-STYLES */
-
+.random-one-container {
+  margin-top: 5rem;
+}
 
 .random-one-body {
   background-color: rgb(151, 65, 65);
@@ -118,8 +120,13 @@
   color: white;
 }
 
-.random-one-body .random-one-title {
-  font-size: 1.7rem;
+.random-one-card-title {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.random-one-card-content {
+  font-size: 1.4rem;
 }
 
 .random-one-img {

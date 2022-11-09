@@ -82,20 +82,27 @@ router.delete('/:recipeId', async (req, res) => {
 })
 
 router.put('/:recipeId', upload.single('fileName'), async (req, res) => {
-  let fileName;
-  if (req.file) {
-    fileName = req.file.filename;
-  }
   const recipeData = JSON.parse(req.body.data)
   const ingredientsData = JSON.parse(req.body.ingredients)
   const stepsData = JSON.parse(req.body.steps)
   const id = req.params.recipeId;
   const fileNameForDelete = req.body.fileNameForDelete
+  let fileName;
 
-  fs.unlink(`./public/assets/files/${fileNameForDelete}`, function (err) {
-    if (err) return console.log(err);
-    console.log('file deleted successfully');
-  });
+  if (req.file) {
+    fileName = req.file.filename;
+ 
+    fs.unlink(`./public/assets/files/${fileNameForDelete}`, function (err) {
+      if (err) return console.log(err);
+      console.log('file deleted successfully');
+    });
+  } 
+
+  
+
+
+
+
 
 
 

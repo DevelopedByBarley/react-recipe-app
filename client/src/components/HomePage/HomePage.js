@@ -65,13 +65,10 @@ export function HomePage({ isThemeDark }) {
             })}
           </div>
           <div className='random-one-container'>
-            <div className='random-one-title section-title'>
-              <h1 className='section-title'>The Random One</h1>
-            </div>
             <div className='random-one-img' style={{ "background": `url(${`/assets/files/${randomRecipe?.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
             <div className='random-one-body'>
-              <h1 className='random-one-title'>{randomRecipe?.title}</h1>
-              <div className='random-one-content'>
+              <h1 className='random-one-card-title'>{randomRecipe?.title}</h1>
+              <div className='random-one-card-content'>
                 <h5> {randomRecipe?.fullTime}mins {randomRecipe?.ingredients.length}ingredient {randomRecipe?.steps.length}step</h5>
               </div>
             </div>

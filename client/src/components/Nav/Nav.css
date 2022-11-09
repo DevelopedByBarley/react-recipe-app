@@ -8,6 +8,7 @@ nav {
     background-color: white;
     z-index: 99;
     left: -100%;
+    top: 0;
     transition: all .4s ease-in-out;
 }
 
