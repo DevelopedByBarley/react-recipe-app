@@ -2,7 +2,12 @@ import './HomePage.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BiFoodMenu } from 'react-icons/bi'
+
+import { CiStopwatch } from 'react-icons/ci'
+import { MdOutlineMenuBook } from 'react-icons/md'
+import { IoEyeSharp, IoFootstepsOutline } from 'react-icons/io5'
+
+
 import { Spinner } from '../Spinner/Spinner'
 
 
@@ -51,12 +56,14 @@ export function HomePage({ isThemeDark }) {
                         <h1>{recipe.title}</h1>
                       </div>
                       <div className='latest-recipe-content'>
-                        {recipe.fullTime}mins {recipe.ingredients.length}ingredient {recipe.steps.length}step
+                        <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime} mins
+                        <MdOutlineMenuBook size={30} className='recipe-icon' />{recipe.ingredients.length} ingredient
+                        <IoFootstepsOutline size={30} className='recipe-icon' />{recipe.steps.length} step
                       </div>
                     </div>
                     <div className='latest-recipe-view-btn'>
                       <Link to={`/recipe-single/${recipe._id}`}>
-                        <button className='view-btn'><BiFoodMenu size={40} /></button>
+                        <button className='view-btn'><IoEyeSharp size={40} /></button>
                       </Link>
                     </div>
                   </div>
@@ -69,7 +76,10 @@ export function HomePage({ isThemeDark }) {
             <div className='random-one-body'>
               <h1 className='random-one-card-title'>{randomRecipe?.title}</h1>
               <div className='random-one-card-content'>
-                <h5> {randomRecipe?.fullTime}mins {randomRecipe?.ingredients.length}ingredient {randomRecipe?.steps.length}step</h5>
+                <h5>
+                  <CiStopwatch size={30} className='recipe-icon' />{randomRecipe?.fullTime} mins
+                  <MdOutlineMenuBook size={30} className='recipe-icon' />{randomRecipe?.ingredients.length} ingredient
+                  <IoFootstepsOutline size={30} className='recipe-icon' />{randomRecipe?.steps.length} step</h5>
               </div>
             </div>
           </div>
@@ -95,11 +105,13 @@ export function HomePage({ isThemeDark }) {
                       <h1>{recipe.title}</h1>
                     </div>
                     <div className='hungarian-card-content'>
-                      {recipe.fullTime}mins {recipe.ingredients.length}ingredient {recipe.steps.length}step
+                      <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime} mins
+                      <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} ingredient
+                      <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} step
                     </div>
                     <div className='hungarian-five-view-btn'>
                       <Link to={`/recipe-single/${recipe._id}`}>
-                        <button className='view-btn'><BiFoodMenu size={40} /></button>
+                        <button className='view-btn'><IoEyeSharp size={40} /></button>
                       </Link>
                     </div>
                   </div>
@@ -128,11 +140,13 @@ export function HomePage({ isThemeDark }) {
                         <h1>{recipe.title}</h1>
                       </div>
                       <div className='fast-recipes-card-content'>
-                        {recipe.fullTime}mins {recipe.ingredients.length}ingredient {recipe.steps.length}step
+                        <CiStopwatch size={30} className='recipe-icon' />{recipe.fullTime}  mins
+                        <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} ingredient
+                        <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} step
                       </div>
                       <div className='fast-recipes-view-btn'>
                         <Link to={`/recipe-single/${recipe._id}`}>
-                          <button className='view-btn'><BiFoodMenu size={40} /></button>
+                          <button className='view-btn'><IoEyeSharp size={40} /></button>
                         </Link>
                       </div>
                     </div>
