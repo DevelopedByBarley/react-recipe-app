@@ -4,7 +4,8 @@
 .home-title {
   text-align: center;
   font-size: 6rem;
-  margin-top: 4rem;
+  margin: 4rem 0 4rem 0;
+  font-size: 4rem;
 }
 
 .home-container {
@@ -18,8 +19,8 @@
 */
 
 .section-title {
-  font-size: 2rem;
-  margin: 6rem 0 2rem 0;
+  margin-bottom: 2rem;
+  font-size: 3rem;
   text-align: center;
 }
 

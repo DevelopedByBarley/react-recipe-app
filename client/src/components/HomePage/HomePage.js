@@ -85,7 +85,7 @@ export function HomePage({ isThemeDark }) {
           <div className='hungarian-five-container'>
             <div className='hungarian-five-header'>
               <div className='hungarian-five-title'>
-                <h1>If you like hungarian's</h1>
+                <h1 className='section-title'>If you like hungarian's</h1>
                 <p>{hungarianRecipes.length} recipe for you</p>
               </div>
             </div>
@@ -117,7 +117,7 @@ export function HomePage({ isThemeDark }) {
           <div className='fast-recipes-container'>
             <div className='fast-recipes-header'>
               <div className='fast-recipes-title'>
-                <h1>If you need some fast food</h1>
+                <h1 className='section-title'>If you need some fast food</h1>
                 <p> Less than 18 minutes</p>
               </div>
             </div>
