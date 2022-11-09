@@ -162,13 +162,18 @@
   font-size: 2rem;
 }
 
+.hungarian-five-header p{
+  text-align: center;
+}
+
 .hungarian-card-img {
   height: 250px;
 }
 
-.hungarian-card-title {
-  font-size: .8rem;
-  margin-bottom: 2rem;
+.hungarian-card-title h1 {
+  font-size: 1.7rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .hungarian-card-title,
