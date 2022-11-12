@@ -63,6 +63,9 @@ nav {
 .log-buttons .logout {
     background-color: rgb(167, 96, 96);
 }
+.log-buttons .register {
+    background-color: rgb(133, 96, 167);
+}
 
 
 

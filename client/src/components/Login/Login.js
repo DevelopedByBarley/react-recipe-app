@@ -1,6 +1,6 @@
 import './Login.css'
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios'
 
 
@@ -43,7 +43,8 @@ export function Login({ setLoggedIn }) {
 
         <input type="email" placeholder="Email" onChange={(event) => { setEmail(event.target.value) }} />
         <input type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} />
-        <button type='submit' className='login-button'>Login</button>
+        <button type='submit' className='login-button'>Login</button> <br></br>
+        <Link className='forgot-password'>Forgot your password?</Link>
       </form>
     </div>
   )

@@ -41,6 +41,9 @@ export function Nav({ isLoggedIn, setLoggedIn }) {
               setLoggedIn(false)
               navigate('/')
             }}>Logout</button>
+            <button className='register' style={{ "display": `${isLoggedIn ? "none" : ""}` }} onClick={() => {
+              navigate('/register')
+            }}>Register</button>
           </div>
         </div>
 

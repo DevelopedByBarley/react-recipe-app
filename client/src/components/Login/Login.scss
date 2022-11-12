@@ -1,0 +1,21 @@
+.login-form {
+  text-align: center;
+
+  h1 {
+    margin: 5rem 0 2rem 0;
+  }
+
+  .login-button {
+    color: white;
+    padding: .5rem 1.5rem;
+    border-radius: 6px;
+    background-color: rgb(70, 153, 62);
+    margin-top: 1rem;
+  }
+
+  .forgot-password {
+    position: relative;
+    top: .5rem;
+  }
+
+}
