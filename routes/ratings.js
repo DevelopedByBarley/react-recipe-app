@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Ratings = require('../database/models/ratings')
-const bodyParser = require('body-parser');
+
 
 
 router.get('/', async (req, res) => {
@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   res.send(ratings)
 })
 
-router.put('/', bodyParser.json(), async (req, res) => {
+router.put('/', async (req, res) => {
   const id = '63694256f05658826a38d944'
   const ratings = req.body.ratings;
 

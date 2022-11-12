@@ -15,8 +15,8 @@
   width: 90%;
 }
 
-
 input:focus {
+  -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
   padding: .4rem;
 }
@@ -29,7 +29,9 @@ input {
 
 .file {
   width: 100%;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 2rem;
 }
 
@@ -58,7 +60,6 @@ button {
   margin: .5rem;
 }
 
-
 .ingredients,
 .steps {
   margin: 1rem 0;
@@ -70,8 +71,6 @@ button {
   padding: .2rem;
 }
 
-
-
 #prepTime {
   width: 90%;
 }
@@ -79,7 +78,6 @@ button {
 #cookTime {
   width: 90%;
 }
-
 
 textarea {
   width: 100%;
@@ -97,3 +95,4 @@ textarea {
   color: white;
   padding: .5rem 1rem;
 }
+/*# sourceMappingURL=Form.css.map */

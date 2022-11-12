@@ -11,7 +11,7 @@ import { IoEyeSharp, IoFootstepsOutline } from 'react-icons/io5'
 import { Spinner } from '../Spinner/Spinner'
 
 
-export function HomePage({ isThemeDark }) {
+export function HomePage() {
 
   const [isPending, setPending] = useState(false);
   const [lastFiveRecipe, setLastFiveRecipe] = useState([]);
@@ -36,7 +36,7 @@ export function HomePage({ isThemeDark }) {
     isPending ? (
       <Spinner />
     ) : (
-      <div className={`${isThemeDark ? "dark" : ""} home-container`}>
+      <div className={"home-container"}>
 
         <h1 className='home-title'>Home</h1>
 

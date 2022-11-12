@@ -52,6 +52,18 @@ nav {
     cursor: pointer;
 }
 
+.log-buttons button {
+    color: white;
+    padding: .5rem 1.5rem;
+}
+
+.log-buttons .login {
+    background-color: rgb(117, 153, 187);
+}
+.log-buttons .logout {
+    background-color: rgb(167, 96, 96);
+}
+
 
 
 

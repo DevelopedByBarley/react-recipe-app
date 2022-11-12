@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Spinner } from '../Spinner/Spinner';
 
-export function WelcomePage({ isThemeDark }) {
+export function WelcomePage() {
 
   const [recipes, setRecipes] = useState([]);
   const [isPending, setPending] = useState(false)
@@ -13,8 +13,9 @@ export function WelcomePage({ isThemeDark }) {
 
   useEffect(() => {
     setPending(true)
-    axios.get('/api/recipes')
+    axios.get('/api/recipes/allRecipes')
       .then((res) => {
+        console.log(res.data);
         setRecipes(res.data)
       })
       .finally(() => setPending(false))
@@ -42,7 +43,7 @@ export function WelcomePage({ isThemeDark }) {
         :
         (
           <div className='welcome-page'>
-            <div className={`${isThemeDark ? "dark" : ""}`}>
+            <div className>
               <div className='welcome'>
                 <h1>Welcome to my Recipe App</h1>
               </div>

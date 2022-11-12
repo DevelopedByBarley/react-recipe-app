@@ -10,6 +10,7 @@ const recipeRouter = require('./routes/recipe');
 const ratingsRouter = require('./routes/ratings');
 const categoriesRouter = require('./routes/categories');
 const homeRouter = require('./routes/home')
+const userRouter = require('./routes/user')
 
 
 app.use(cors());
@@ -20,6 +21,7 @@ app.use('/api/recipes', recipeRouter);
 app.use('/api/ratings', ratingsRouter)
 app.use('/api/categories', categoriesRouter)
 app.use('/api/home', homeRouter)
+app.use('/api/user', userRouter)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

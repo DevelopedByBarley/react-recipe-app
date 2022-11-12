@@ -11,7 +11,6 @@ export function RecipeSingle({ isThemeDark }) {
 
   const param = useParams();
   const id = param.id;
-  console.log(id);
 
   const [recipe, setRecipe] = useState("");
   const [isPending, setPending] = useState(false);
@@ -36,6 +35,10 @@ export function RecipeSingle({ isThemeDark }) {
 
               <div className='recipe-single-content'>
                 <div className='recipe-single-image' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) center center`, "backgroundSize": "cover" }}></div>
+                <div className='recipe-single-userName'>
+                  <h2>Receptet hozzáadta:</h2>
+                  <p>{recipe.userName}</p>
+                </div>
                 <div className='recipe-single-body'>
                   <div className='recipe-time'>
                     <div className='prepTime times'>

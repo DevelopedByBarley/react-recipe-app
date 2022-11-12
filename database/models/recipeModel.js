@@ -6,6 +6,10 @@ const RecipeSchema = new Schema({
     type: String,
     required: true
   },
+  userName: {
+    type: String,
+    required: true
+  },
   categorie: {
     type: mongoose.Schema.Types.ObjectId,
     required: false,

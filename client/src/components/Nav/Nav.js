@@ -1,12 +1,15 @@
 import './Nav.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { RiMenuFill } from 'react-icons/ri'
 import { IoRestaurantSharp } from 'react-icons/io5'
 
 
-export function Nav({ isThemeDark, setThemeDark }) {
+export function Nav({ isLoggedIn, setLoggedIn }) {
+  const navigate = useNavigate();
   const [isMenuActive, setMenuActive] = useState(false)
+
+  console.log(isLoggedIn);
 
   return (
     <header>
@@ -16,10 +19,10 @@ export function Nav({ isThemeDark, setThemeDark }) {
         <RiMenuFill />
       </button>
       <nav className={`${isMenuActive ? "active" : ""}`}>
-        <div className={`nav-wrapper ${isThemeDark ? "dark" : ""}`}>
+        <div className="nav-wrapper">
           <ul>
             <li onClick={() => setMenuActive(false)} >
-              <Link className='link' to="/"><IoRestaurantSharp size={25}/></Link>
+              <Link className='link' to="/"><IoRestaurantSharp size={25} /></Link>
             </li>
             <li onClick={() => setMenuActive(false)}>
               <Link className='link' to="/home">Home</Link>
@@ -31,8 +34,17 @@ export function Nav({ isThemeDark, setThemeDark }) {
               <Link className='link' to="/recipes/add">Add recipe</Link>
             </li>
           </ul>
-
+          <div className='log-buttons'>
+            <button className='login' style={{ "display": `${isLoggedIn ? "none" : ""}` }} onClick={() => { navigate("/login") }}>Login</button>
+            <button className='logout' style={{ "display": `${isLoggedIn ? "" : "none"}` }} onClick={() => {
+              localStorage.clear();
+              setLoggedIn(false)
+              navigate('/')
+            }}>Logout</button>
+          </div>
         </div>
+
+
       </nav>
     </header >
   )

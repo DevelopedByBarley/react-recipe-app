@@ -10,11 +10,14 @@ import { useEffect, useState } from 'react';
 import { WelcomePage } from './components/WelcomePage/WelcomePage';
 import { RatingStars } from './components/RatingStars/RatingStars';
 import { HomePage } from './components/HomePage/HomePage';
+import { Register } from './components/Register/Register';
+import { Login } from './components/Login/Login';
+import { Dashboard } from './components/Dashboard/Dashboard';
+import { BiLogIn } from 'react-icons/bi';
 
 function App() {
-
-  const [isThemeDark, setThemeDark] = useState(false)
   const [isRatingVisible, setRatingVisible] = useState(false)
+  const [isLoggedIn, setLoggedIn] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,13 +28,16 @@ function App() {
 
   return (
     <div className="app-container">
-      <Nav isThemeDark={isThemeDark} setThemeDark={setThemeDark} />
+      <Nav isLoggedIn={isLoggedIn} setLoggedIn={setLoggedIn}/>
       <Routes>
-        <Route path='/' element={<WelcomePage isThemeDark={isThemeDark} />} />
-        <Route path='/home' element={<HomePage isThemeDark={isThemeDark} />} />
-        <Route path='/recipes' element={<RecipeList isThemeDark={isThemeDark} />} />
-        <Route path='/recipes/add' element={<Form isThemeDark={isThemeDark} />} />
-        <Route path='/recipe-single/:id' element={<RecipeSingle isThemeDark={isThemeDark} />} />
+        <Route path='/' element={<WelcomePage/>} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login setLoggedIn={setLoggedIn}/>} />
+        <Route path='/dashboard' element={<Dashboard/>} />
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/recipes' element={<RecipeList  />} />
+        <Route path='/recipes/add' element={<Form />} />
+        <Route path='/recipe-single/:id' element={<RecipeSingle />} />
         <Route path='/recipe-update/:id' element={<UpdateForm />} />
       </Routes>
       <div>{isRatingVisible ? (<RatingStars setRatingVisible={setRatingVisible} />) : ("")}</div>
