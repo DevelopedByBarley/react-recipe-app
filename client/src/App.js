@@ -12,8 +12,6 @@ import { RatingStars } from './components/RatingStars/RatingStars';
 import { HomePage } from './components/HomePage/HomePage';
 import { Register } from './components/Register/Register';
 import { Login } from './components/Login/Login';
-import { Dashboard } from './components/Dashboard/Dashboard';
-import { BiLogIn } from 'react-icons/bi';
 
 function App() {
   const [isRatingVisible, setRatingVisible] = useState(false)
@@ -33,7 +31,6 @@ function App() {
         <Route path='/' element={<WelcomePage/>} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login setLoggedIn={setLoggedIn}/>} />
-        <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/home' element={<HomePage />} />
         <Route path='/recipes' element={<RecipeList  />} />
         <Route path='/recipes/add' element={<Form />} />

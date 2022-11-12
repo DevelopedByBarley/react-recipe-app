@@ -2,12 +2,9 @@ import './HomePage.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { CiStopwatch } from 'react-icons/ci'
 import { MdOutlineMenuBook } from 'react-icons/md'
-import { IoEyeSharp, IoFootstepsOutline } from 'react-icons/io5'
-
-
+import { IoFootstepsOutline } from 'react-icons/io5'
 import { Spinner } from '../Spinner/Spinner'
 
 
@@ -37,13 +34,10 @@ export function HomePage() {
       <Spinner />
     ) : (
       <div className={"home-container"}>
-
         <h1 className='home-title'>Home</h1>
-
         <div className='latest-five-container'>
-
-
           <div className='latest-five-recipes-container'>
+
             {lastFiveRecipe.map((recipe) => {
               return (
                 <div className='latest-five-recipe-card'>
@@ -67,6 +61,7 @@ export function HomePage() {
                 </div>
               )
             })}
+            
           </div>
           <div className='random-one-container'>
             <div className='random-one-img' style={{ "background": `url(${`/assets/files/${randomRecipe?.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
