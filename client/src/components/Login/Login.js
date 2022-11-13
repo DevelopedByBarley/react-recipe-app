@@ -29,9 +29,13 @@ export function Login({ setLoggedIn }) {
       setLoggedIn(true)
       alert('Logged successfull')
       navigate('/recipes')
+      setTimeout(() => {
+        localStorage.clear();
+        setLoggedIn(false)
+      }, 1500000)
     } else {
       alert('Invalid email or password')
-      navigate("/")
+      navigate("/login")
     }
   }
 
@@ -42,7 +46,7 @@ export function Login({ setLoggedIn }) {
       <form onSubmit={loginUser}>
 
         <input type="email" placeholder="Email" onChange={(event) => { setEmail(event.target.value) }} />
-        <input type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} />
+        <input type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} /><br/>
         <button type='submit' className='login-button'>Login</button> <br></br>
         <Link className='forgot-password'>Forgot your password?</Link>
       </form>

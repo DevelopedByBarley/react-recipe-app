@@ -9,8 +9,6 @@ export function Nav({ isLoggedIn, setLoggedIn }) {
   const navigate = useNavigate();
   const [isMenuActive, setMenuActive] = useState(false)
 
-  console.log(isLoggedIn);
-
   return (
     <header>
       <button className='menu-toggle' onClick={() => {
@@ -35,13 +33,18 @@ export function Nav({ isLoggedIn, setLoggedIn }) {
             </li>
           </ul>
           <div className='log-buttons'>
-            <button className='login' style={{ "display": `${isLoggedIn ? "none" : ""}` }} onClick={() => { navigate("/login") }}>Login</button>
+            <button className='login' style={{ "display": `${isLoggedIn ? "none" : ""}` }} onClick={() => {
+              navigate("/login")
+              setMenuActive(false);
+            }}>Login</button>
             <button className='logout' style={{ "display": `${isLoggedIn ? "" : "none"}` }} onClick={() => {
+              setMenuActive(false)
               localStorage.clear();
               setLoggedIn(false)
               navigate('/')
             }}>Logout</button>
             <button className='register' style={{ "display": `${isLoggedIn ? "none" : ""}` }} onClick={() => {
+              setMenuActive(false)
               navigate('/register')
             }}>Register</button>
           </div>

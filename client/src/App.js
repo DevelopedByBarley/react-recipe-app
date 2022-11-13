@@ -18,21 +18,25 @@ function App() {
   const [isLoggedIn, setLoggedIn] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => {
-      setRatingVisible(true)
-    }, 200000)
-  }, [])
+    const token = localStorage.getItem('token');
+
+    if(!token) {
+      setLoggedIn(false)
+    } else {
+      setLoggedIn(true)
+    }
+  })
 
 
   return (
     <div className="app-container">
-      <Nav isLoggedIn={isLoggedIn} setLoggedIn={setLoggedIn}/>
+      <Nav isLoggedIn={isLoggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
-        <Route path='/' element={<WelcomePage/>} />
+        <Route path='/' element={<WelcomePage />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login setLoggedIn={setLoggedIn}/>} />
+        <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path='/home' element={<HomePage />} />
-        <Route path='/recipes' element={<RecipeList  />} />
+        <Route path='/recipes' element={<RecipeList />} />
         <Route path='/recipes/add' element={<Form />} />
         <Route path='/recipe-single/:id' element={<RecipeSingle />} />
         <Route path='/recipe-update/:id' element={<UpdateForm />} />

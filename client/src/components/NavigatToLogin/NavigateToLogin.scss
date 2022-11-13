@@ -1,0 +1,33 @@
+.navigate-login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    .navigate-login-buttons {
+        margin: 2rem;
+        border: 1px solid;
+        padding: 2rem;
+
+        .navigate-login-button {
+            border: 1px solid green;
+            margin: 1rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .register {
+            background-color: rgb(62, 143, 62);
+        }
+
+        .login {
+            background-color: rgb(110, 163, 167);
+        }
+
+        
+    }
+
+}

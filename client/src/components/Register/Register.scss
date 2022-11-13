@@ -1,0 +1,22 @@
+.register-container {
+
+    h1 {
+        margin-bottom: 2rem;
+    }
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    button {
+        background: none;
+        border: none;
+        padding: .7rem 1.5rem;
+        margin-top: 1rem;
+        color: white;
+        background-color: rgb(94, 180, 206);
+        border-radius: 10px;
+    }
+}

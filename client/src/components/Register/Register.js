@@ -1,4 +1,4 @@
-
+import './Register.css'
 import { useState } from 'react';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
@@ -24,8 +24,8 @@ export function Register() {
     })
 
     const status = res.data.status
-    
-    if(status === 'ok') {
+
+    if (status === 'ok') {
       navigate('/login')
     } else {
       navigate('/register')
@@ -37,12 +37,12 @@ export function Register() {
 
 
   return (
-    <div>
+    <div className='register-container'>
       <h1>Register</h1>
       <form onSubmit={registerUser}>
         <input type="text" placeholder="Name" onChange={(event) => { setName(event.target.value) }} />
         <input type="email" placeholder="Email" onChange={(event) => { setEmail(event.target.value) }} />
-        <input type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} />
+        <input type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} /><br />
         <button type='submit'>Register</button>
       </form>
     </div>

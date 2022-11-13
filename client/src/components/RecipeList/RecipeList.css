@@ -1,16 +1,21 @@
-.recipeList-container {
+.recipeList{
   grid-template-columns: repeat(3, 1fr);
   padding: 1rem;
 }
 
+.recipeList-welcome {
+  text-align: center;
+  margin: 7rem 2rem;
+}
+
 @media (min-width: 768px) {
-  .recipeList-container {
+  .recipeList {
     display: grid;
     grid-gap: 1rem;
   }
 }
 
-.recipeList-container .card .card-header {
+.recipeList .card .card-header {
   height: 300px
 }
 
