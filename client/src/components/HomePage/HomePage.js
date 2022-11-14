@@ -43,7 +43,7 @@ export function HomePage() {
                 <div className='latest-five-recipe-card'>
                   <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
                     <div className='latest-recipe-header'>
-                      <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
+                      <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center` , "backgroundSize": "cover" }}></div>
                     </div>
                     <div className='latest-recipe-body'>
                         <div className='latest-recipe-title'>

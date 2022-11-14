@@ -49,6 +49,7 @@
 
         .latest-recipe-body {
           padding: 1rem;
+
           .latest-recipe-title {
             h1 {
               font-size: 1.5rem;
@@ -102,43 +103,56 @@
   /* RANDOM-ONE-STYLES */
 
   .random-one-container {
-    margin-top: 5rem;
+    position: relative;
+    top: 3rem;
+    width: 100%;
+    margin: 0 auto;
+
     .random-one-img {
-      height: 500px;
+      height: 530px;
       background-size: 100%;
-      width: 100%; 
+      width: 100%;
     }
+
+    @media (min-width: 1000px) {
+      .random-one-img {
+        height: 500px;
+        width: 60%;
+      }
+    }
+
 
     .random-one-body {
       background-color: rgb(151, 65, 65);
       padding: 2rem;
       border-radius: 16px;
-      margin: -2rem 0.5rem;
+      margin: -2rem 1rem;
       width: 100%;
       color: white;
 
+
       .random-one-card-title {
         margin-bottom: 1rem;
-        font-size: 3rem;
+        font-size: 2rem;
 
         .random-one-card-content {
           font-size: 1.4rem;
         }
       }
+
     }
-    @media (min-width: 1000px) {
+
+
+    @media(min-width: 768px) {
       .random-one-body {
         width: 80%;
       }
-  
-      .random-one-img {
-        height: 600px;
-        width: 50%; 
-      }
     }
+
+
   }
 
- 
+
 
   /* HUNGARIAN-FIVE-STYLES */
 
@@ -176,6 +190,7 @@
             text-align: center;
           }
         }
+
         .hungarian-card-content {
           position: absolute;
           bottom: 10px;
@@ -215,6 +230,7 @@
     .fast-recipes-cards {
       display: grid;
       grid-gap: 1.5rem;
+
       .fast-recipes-card {
         position: relative;
         box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
@@ -243,6 +259,7 @@
         }
       }
     }
+
     @media (min-width: 768px) {
       .fast-recipes-cards {
         grid-template-columns: repeat(3, 1fr);

@@ -107,40 +107,46 @@
 }
 
 .home-container .random-one-container {
-  margin-top: 5rem;
+  position: relative;
+  top: 3rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .home-container .random-one-container .random-one-img {
-  height: 500px;
+  height: 530px;
   background-size: 100%;
   width: 100%;
+}
+
+@media (min-width: 1000px) {
+  .home-container .random-one-container .random-one-img {
+    height: 500px;
+    width: 60%;
+  }
 }
 
 .home-container .random-one-container .random-one-body {
   background-color: #974141;
   padding: 2rem;
   border-radius: 16px;
-  margin: -2rem 0.5rem;
+  margin: -2rem 1rem;
   width: 100%;
   color: white;
 }
 
 .home-container .random-one-container .random-one-body .random-one-card-title {
   margin-bottom: 1rem;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .home-container .random-one-container .random-one-body .random-one-card-title .random-one-card-content {
   font-size: 1.4rem;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 768px) {
   .home-container .random-one-container .random-one-body {
     width: 80%;
-  }
-  .home-container .random-one-container .random-one-img {
-    height: 600px;
-    width: 50%;
   }
 }
 
