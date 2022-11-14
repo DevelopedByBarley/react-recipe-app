@@ -32,13 +32,14 @@ export function RecipeSingle({ isThemeDark }) {
           :
           (
             <div className="recipe-single-container" >
-
-              <div className='recipe-single-content'>
-                <div className='recipe-single-image' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) center center`, "backgroundSize": "cover" }}></div>
+              <div className='recipe-single-header'>
+              <div className='recipe-single-image' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) center center`, "backgroundSize": "cover" }}></div>
                 <div className='recipe-single-userName'>
                   <h2>Receptet hozzáadta:</h2>
                   <p>{recipe.userName}</p>
                 </div>
+              </div>
+              <div className='recipe-single-content'>
                 <div className='recipe-single-body'>
                   <div className='recipe-time'>
                     <div className='prepTime times'>

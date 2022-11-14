@@ -1,5 +1,10 @@
 .login-form {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
   h1 {
     margin: 5rem 0 2rem 0;

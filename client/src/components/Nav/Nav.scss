@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=IBM+Plex+Sans+Arabic:wght@200&display=swap");
+
+header {
+  .menu-toggle {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    z-index: 100;
+    height: 50px;
+    width: 50px;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    color: black;
+    border: 1px solid rgb(224, 224, 224);
+    cursor: pointer;
+  }
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 99;
+  left: -100%;
+  top: 0;
+  transition: all 0.4s ease-in-out;
+  .nav-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  ul {
+    list-style-type: none;
+    li {
+      .link {
+        text-decoration: none;
+        font-family: "Concert One", cursive;
+        font-size: 3rem;
+      }
+    }
+  }
+  .log-buttons {
+    button {
+      color: white;
+      padding: 0.5rem 1.5rem;
+    }
+
+    .login {
+      background-color: rgb(117, 153, 187);
+    }
+
+    .logout {
+      background-color: rgb(167, 96, 96);
+    }
+
+    .register {
+      background-color: rgb(133, 96, 167);
+    }
+  }
+}
+
+.active {
+  left: 0;
+}
+
+@media (min-width: 768px) {
+  header {
+    .menu-toggle {
+      display: none;
+    }
+  }
+  nav {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    .nav-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 50px;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1px solid;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          .link {
+            font-size: 1.2rem;
+            margin: 0 1rem;
+          }
+        }
+      }
+    }
+  }
+}

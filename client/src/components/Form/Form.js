@@ -50,7 +50,7 @@ export function Form({ isThemeDark }) {
     <>
       {
         isLoggedIn ? (
-          <div className={"form-container"}>
+          <div className="form-container">
             <h1 className='form-header'>Add Recipe</h1>
 
             <form onSubmit={(event) => {
@@ -85,7 +85,7 @@ export function Form({ isThemeDark }) {
                 .catch((err) => console.log(err))
             }}>
 
-              <div>
+              <div className='title'>
                 <h3>Title:</h3>
                 <input type="text" name="title" id="title" required />
               </div>

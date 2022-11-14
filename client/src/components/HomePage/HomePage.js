@@ -50,9 +50,9 @@ export function HomePage() {
                           <h1>{recipe.title}</h1>
                         </div>
                         <div className='latest-recipe-content'>
-                          <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime}mins
-                          <MdOutlineMenuBook size={30} className='recipe-icon' />{recipe.ingredients.length} ingredient
-                          <IoFootstepsOutline size={30} className='recipe-icon' />{recipe.steps.length} step
+                          <CiStopwatch size={30} className='recipe-icon' />&nbsp;{recipe.fullTime}mins
+                          <MdOutlineMenuBook size={30} className='recipe-icon' />&nbsp;{recipe.ingredients.length} ingredient
+                          <IoFootstepsOutline size={30} className='recipe-icon' />&nbsp;{recipe.steps.length} step
                         </div>
                       </div>
                   </Link>

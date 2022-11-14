@@ -25,6 +25,10 @@ function App() {
     } else {
       setLoggedIn(true)
     }
+
+    setTimeout(() => {
+      setRatingVisible(true)
+    },240000)
   })
 
 

@@ -10,7 +10,7 @@ export function RatingStars({ setRatingVisible }) {
 
 
   return (
-    <div className={`rating-stars-container `}>
+    <div className="rating-stars-container" >
       <div className='rating-stars-header'>
         <h1>Érdekel a véleményed!</h1>
         <h4>Értékeld az appot!</h4>

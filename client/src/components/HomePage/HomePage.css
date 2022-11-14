@@ -5,7 +5,10 @@
 }
 
 .recipe-icon {
-  margin-left: 0.5rem;
+  margin-left: 1rem;
+  position: relative;
+  top: .5rem;
+  color: #f09c00;
 }
 
 .homepage-link {
@@ -45,6 +48,10 @@
 .home-container .latest-five-recipes-container .latest-five-recipe-card .homepage-link .latest-recipe-header .latest-recipe-img {
   height: 300px;
   width: 100%;
+}
+
+.home-container .latest-five-recipes-container .latest-five-recipe-card .homepage-link .latest-recipe-body {
+  padding: 1rem;
 }
 
 .home-container .latest-five-recipes-container .latest-five-recipe-card .homepage-link .latest-recipe-body .latest-recipe-title h1 {
@@ -103,6 +110,12 @@
   margin-top: 5rem;
 }
 
+.home-container .random-one-container .random-one-img {
+  height: 500px;
+  background-size: 100%;
+  width: 100%;
+}
+
 .home-container .random-one-container .random-one-body {
   background-color: #974141;
   padding: 2rem;
@@ -122,13 +135,12 @@
 }
 
 @media (min-width: 1000px) {
-  .home-container .random-one-body {
+  .home-container .random-one-container .random-one-body {
     width: 80%;
   }
-  .home-container .random-one-img {
+  .home-container .random-one-container .random-one-img {
     height: 600px;
     width: 50%;
-    margin: 0 5rem;
   }
 }
 
