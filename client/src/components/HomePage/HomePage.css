@@ -5,7 +5,7 @@
 }
 
 .recipe-icon {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .homepage-link {
@@ -23,23 +23,75 @@
 
 .home-container {
   height: 100%;
+  /*LATEST-FIVE-RECIPES-STYLES*/
+  /* RANDOM-ONE-STYLES */
+  /* HUNGARIAN-FIVE-STYLES */
+  /* FAST-FOOD-STYLES */
 }
 
-/*
-  @media (min-width: 768px) {
-  
-  }
-*/
-/*LATEST-FIVE-RECIPES-STYLES*/
-.latest-five-recipes-container {
+.home-container .latest-five-recipes-container {
   display: -ms-grid;
   display: grid;
   grid-gap: 1.5rem;
-  margin: .5rem;
+  margin: 0.5rem;
+}
+
+.home-container .latest-five-recipes-container .latest-five-recipe-card {
+  position: relative;
+  -webkit-box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+.home-container .latest-five-recipes-container .latest-five-recipe-card .homepage-link .latest-recipe-header .latest-recipe-img {
+  height: 300px;
+  width: 100%;
+}
+
+.home-container .latest-five-recipes-container .latest-five-recipe-card .homepage-link .latest-recipe-body .latest-recipe-title h1 {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.home-container .latest-five-recipes-container .latest-five-recipe-card .homepage-link .latest-recipe-body .latest-recipe-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.home-container .latest-five-recipes-container .latest-five-recipe-card .homepage-link .latest-recipe-body .latest-recipe-content .latest-recipe-content p {
+  font-weight: bolder;
 }
 
 @media (min-width: 768px) {
-  .latest-five-recipes-container {
+  .home-container .latest-five-recipes-container .latest-five-recipe-card:nth-child(1) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / span 4;
+  }
+  .home-container .latest-five-recipes-container .latest-five-recipe-card:nth-child(2) {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 2;
+    grid-column: 5 / 7;
+  }
+  .home-container .latest-five-recipes-container .latest-five-recipe-card:nth-child(3) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+  }
+  .home-container .latest-five-recipes-container .latest-five-recipe-card:nth-child(4) {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 3 / 5;
+  }
+  .home-container .latest-five-recipes-container .latest-five-recipe-card:nth-child(5) {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 2;
+    grid-column: 5 / 7;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-container .latest-five-recipes-container {
     -ms-grid-columns: (1fr)[6];
         grid-template-columns: repeat(6, 1fr);
     -ms-grid-rows: minmax(400px, auto);
@@ -47,121 +99,47 @@
   }
 }
 
-.latest-recipe-img {
-  height: 300px;
-  width: 100%;
-}
-
-.latest-five-recipe-card {
-  position: relative;
-  -webkit-box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
-}
-
-.latest-recipe-content {
-  padding: 1rem;
-  text-align: center;
-}
-
-.latest-recipe-body h1 {
-  font-size: 1.5rem;
-  margin: .5rem;
-  text-align: center;
-}
-
-.latest-recipe-content p {
-  font-weight: bolder;
-}
-
-.latest-recipe-view-btn {
-  background-color: yellow;
-  position: absolute;
-  top: 0;
-}
-
-@media (min-width: 768px) {
-  .latest-five-recipe-card:nth-child(1) {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
-    grid-column: 1 / span 4;
-  }
-  .latest-five-recipe-card:nth-child(2) {
-    -ms-grid-column: 5;
-    -ms-grid-column-span: 2;
-    grid-column: 5 / 7;
-  }
-  .latest-five-recipe-card:nth-child(3) {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1 / 3;
-  }
-  .latest-five-recipe-card:nth-child(4) {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 2;
-    grid-column: 3 / 5;
-  }
-  .latest-five-recipe-card:nth-child(5) {
-    -ms-grid-column: 5;
-    -ms-grid-column-span: 2;
-    grid-column: 5 / 7;
-  }
-}
-
-/* RANDOM-ONE-STYLES */
-.random-one-container {
+.home-container .random-one-container {
   margin-top: 5rem;
 }
 
-.random-one-body {
+.home-container .random-one-container .random-one-body {
   background-color: #974141;
   padding: 2rem;
   border-radius: 16px;
-  margin: -2rem .5rem;
+  margin: -2rem 0.5rem;
   width: 100%;
   color: white;
 }
 
-.random-one-card-title {
+.home-container .random-one-container .random-one-body .random-one-card-title {
   margin-bottom: 1rem;
   font-size: 3rem;
 }
 
-.random-one-card-content {
+.home-container .random-one-container .random-one-body .random-one-card-title .random-one-card-content {
   font-size: 1.4rem;
 }
 
-.random-one-img {
-  height: 400px;
-  width: 95%;
-  margin: 0 auto;
-}
-
 @media (min-width: 1000px) {
-  .random-one-body {
+  .home-container .random-one-body {
     width: 80%;
   }
-  .random-one-img {
+  .home-container .random-one-img {
     height: 600px;
     width: 50%;
     margin: 0 5rem;
   }
 }
 
-/* HUNGARIAN-FIVE-STYLES */
-.hungarian-five-container {
+.home-container .hungarian-five-container {
   display: -ms-grid;
   display: grid;
   grid-gap: 1.5rem;
-  margin: 7rem .5rem;
+  margin: 7rem 0.5rem;
 }
 
-.hungarian-five-cards {
-  -webkit-box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
-  position: relative;
-}
-
-.hungarian-five-header {
+.home-container .hungarian-five-container .hungarian-five-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,86 +152,82 @@
   font-size: 2rem;
 }
 
-.hungarian-five-header p {
+.home-container .hungarian-five-container .hungarian-five-header .hungarian-five-title p {
   text-align: center;
 }
 
-.hungarian-card-img {
+.home-container .hungarian-five-container .hungarian-five-cards {
+  -webkit-box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
+  position: relative;
+}
+
+.home-container .hungarian-five-container .hungarian-five-cards .hungarian-card-img {
   height: 250px;
 }
 
-.hungarian-card-title h1 {
+.home-container .hungarian-five-container .hungarian-five-cards .hungarian-card-body .hungarian-card-title h1 {
   font-size: 1.7rem;
   margin-bottom: 3rem;
   text-align: center;
 }
 
-.hungarian-card-title,
-.hungarian-card-content {
-  text-align: center;
-  padding: 1rem;
-}
-
-.hungarian-card-content {
+.home-container .hungarian-five-container .hungarian-five-cards .hungarian-card-body .hungarian-card-content {
   position: absolute;
   bottom: 10px;
   text-align: center;
   width: 100%;
 }
 
-.hungarian-five-view-btn {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 @media (min-width: 768px) {
-  .hungarian-five-container {
+  .home-container .hungarian-five-container {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* FAST-FOOD-STYLES */
-.fast-recipes-container {
-  margin: .5rem;
+.home-container .fast-recipes-container {
+  margin: 0.5rem;
 }
 
-.fast-recipes-title {
+.home-container .fast-recipes-container .fast-recipes-header .fast-recipes-title {
   text-align: center;
   margin: 5rem;
 }
 
-.fast-recipes-title h1 {
-  font-size: 4rem;
+.home-container .fast-recipes-container .fast-recipes-header .fast-recipes-title h1 {
+  font-size: 3.5rem;
 }
 
-.fast-recipes-title p {
+.home-container .fast-recipes-container .fast-recipes-header .fast-recipes-title p {
   font-size: 1.5rem;
 }
 
-.fast-recipes-cards {
+.home-container .fast-recipes-container .fast-recipes-cards {
   display: -ms-grid;
   display: grid;
   grid-gap: 1.5rem;
 }
 
-.fast-recipes-card {
+.home-container .fast-recipes-container .fast-recipes-cards .fast-recipes-card {
   position: relative;
   -webkit-box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
 }
 
-.fast-recipes-card-content, .fast-recipes-card-title {
-  text-align: center;
-  width: 100%;
+.home-container .fast-recipes-container .fast-recipes-cards .homepage-link .fast-recipes-card-img {
+  height: 400px;
 }
 
-.fast-recipes-card-title {
+.home-container .fast-recipes-container .fast-recipes-cards .homepage-link .fast-recipes-card-body .fast-recipes-card-title {
+  text-align: center;
+  width: 100%;
   margin-bottom: 4rem;
 }
 
-.fast-recipes-card-content {
+.home-container .fast-recipes-container .fast-recipes-cards .homepage-link .fast-recipes-card-body .fast-recipes-card-content {
+  text-align: center;
+  width: 100%;
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -261,23 +235,10 @@
           transform: translate(-50%);
 }
 
-.fast-recipes-card-img {
-  height: 400px;
-}
-
-.fast-recipes-view-btn {
-  position: absolute;
-  top: 0;
-}
-
 @media (min-width: 768px) {
-  .fast-recipes-cards {
+  .home-container .fast-recipes-container .fast-recipes-cards {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
-}
-
-.helo {
-  height: 500px;
 }
 /*# sourceMappingURL=HomePage.css.map */

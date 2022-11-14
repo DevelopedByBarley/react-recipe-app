@@ -43,10 +43,9 @@ export function HomePage() {
                 <div className='latest-five-recipe-card'>
                   <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
                     <div className='latest-recipe-header'>
-                      <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}>
-
-                      </div>
-                      <div className='latest-recipe-body'>
+                      <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
+                    </div>
+                    <div className='latest-recipe-body'>
                         <div className='latest-recipe-title'>
                           <h1>{recipe.title}</h1>
                         </div>
@@ -56,7 +55,6 @@ export function HomePage() {
                           <IoFootstepsOutline size={30} className='recipe-icon' />{recipe.steps.length} step
                         </div>
                       </div>
-                    </div>
                   </Link>
                 </div>
               )
