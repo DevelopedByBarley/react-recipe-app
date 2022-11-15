@@ -6,6 +6,8 @@ import { CiStopwatch } from 'react-icons/ci'
 import { MdOutlineMenuBook } from 'react-icons/md'
 import { IoFootstepsOutline } from 'react-icons/io5'
 import { Spinner } from '../Spinner/Spinner'
+import { Footer } from '../Footer/Footer';
+import { SearchBox } from '../SearchBox/SearchBox';
 
 
 export function HomePage() {
@@ -35,6 +37,9 @@ export function HomePage() {
     ) : (
       <div className={"home-container"}>
         <h1 className='home-title'>Home</h1>
+        <div className='search-container'>
+          <SearchBox/>
+        </div>
         <div className='latest-five-container'>
           <div className='latest-five-recipes-container'>
 
@@ -46,23 +51,23 @@ export function HomePage() {
                       <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
                     </div>
                     <div className='latest-recipe-body'>
-                        <div className='latest-recipe-title'>
-                          <h1>{recipe.title}</h1>
-                        </div>
-                        <div className='latest-recipe-content'>
-                          <CiStopwatch size={30} className='recipe-icon' />&nbsp;{recipe.fullTime}mins
-                          <MdOutlineMenuBook size={30} className='recipe-icon' />&nbsp;{recipe.ingredients.length} ingredient
-                          <IoFootstepsOutline size={30} className='recipe-icon' />&nbsp;{recipe.steps.length} step
-                        </div>
+                      <div className='latest-recipe-title'>
+                        <h1>{recipe.title}</h1>
                       </div>
+                      <div className='latest-recipe-content'>
+                        <CiStopwatch size={30} className='recipe-icon' />&nbsp;{recipe.fullTime}mins
+                        <MdOutlineMenuBook size={30} className='recipe-icon' />&nbsp;{recipe.ingredients.length} ingredient
+                        <IoFootstepsOutline size={30} className='recipe-icon' />&nbsp;{recipe.steps.length} step
+                      </div>
+                    </div>
                   </Link>
                 </div>
               )
             })}
-            
+
           </div>
           <div className='random-one-container'>
-            <div className='random-one-img' style={{ "background": `url(${`/assets/files/${randomRecipe?.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
+            <div className='random-one-img' style={{ "background": `url(${`/assets/files/${randomRecipe?.imageURL}`}) center center`, "backgroundSize": "cover" }}></div>
             <div className='random-one-body'>
               <h1 className='random-one-card-title'>{randomRecipe?.title}</h1>
               <div className='random-one-card-content'>
@@ -139,11 +144,10 @@ export function HomePage() {
               })}
             </div>
           </div>
-          <div className='home-ratings'>
 
-          </div>
         </div>
 
+        <Footer />
       </div>
     )
   )

@@ -1,23 +1,29 @@
 .welcome-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100vh;
   text-align: center;
 }
 
-.welcome {
+.welcome-page .welcome {
   font-size: 2rem;
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 
-.welcome-page .link {
-  font-family: 'Concert One', cursive;
+.welcome-page .next-arrow {
   text-decoration: none;
   font-size: 5rem;
 }
 
-.rating {
+.welcome-page .ratings .rating {
   text-align: center;
   margin: 1rem;
 }
+/*# sourceMappingURL=WelcomePage.css.map */

@@ -1,0 +1,24 @@
+.welcome-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  .welcome {
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+
+  .next-arrow {
+    text-decoration: none;
+    font-size: 5rem;
+  }
+
+  
+  .ratings {
+    .rating {
+      text-align: center;
+      margin: 1rem;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { BsStarFill } from 'react-icons/bs'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Spinner } from '../Spinner/Spinner';
+import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 
 export function WelcomePage() {
 
@@ -48,7 +49,7 @@ export function WelcomePage() {
                 <h1>Welcome to my Recipe App</h1>
               </div>
               <h1>We have {recipes.length} Recipes!</h1>
-              <Link className='link' to="/home">Let's See!</Link>
+              <Link className='link next-arrow' to="/home"><BsFillArrowRightCircleFill size={70}/></Link>
               <div className='ratings'>
                 <div className='numberOfRatings'>
                   <h1>{ratings?.length} értékelés!</h1>

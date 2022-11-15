@@ -38,12 +38,16 @@ input {
   padding: 0.2rem;
 }
 
+.form-container .ingredients .quantity-type {
+  width: 55px;
+}
+
 .form-container #prepTime {
   width: 90%;
 }
 
 .form-container select {
-  padding: 0.2rem;
+  padding: 0.4rem;
   margin: 0.1rem;
 }
 

@@ -120,7 +120,7 @@ export function Form({ isThemeDark }) {
                           return next
                         })
                       }} />
-                      <select name={`ingredient-quantity-type-${index}`} defaultValue={"g"} required onChange={(event) => {
+                      <select className='quantity-type' name={`ingredient-quantity-type-${index}`} defaultValue={"g"} required onChange={(event) => {
                         setIngredients((prev) => {
                           const next = [...prev];
                           next[index].quantityType = event.target.value

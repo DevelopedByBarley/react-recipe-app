@@ -12,6 +12,7 @@ import { RatingStars } from './components/RatingStars/RatingStars';
 import { HomePage } from './components/HomePage/HomePage';
 import { Register } from './components/Register/Register';
 import { Login } from './components/Login/Login';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   const [isRatingVisible, setRatingVisible] = useState(false)
@@ -28,7 +29,7 @@ function App() {
 
     setTimeout(() => {
       setRatingVisible(true)
-    },240000)
+    },350000)
   })
 
 

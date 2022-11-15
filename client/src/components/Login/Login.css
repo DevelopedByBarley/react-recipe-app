@@ -26,6 +26,7 @@
   border-radius: 6px;
   background-color: #46993e;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 .login-form .forgot-password {

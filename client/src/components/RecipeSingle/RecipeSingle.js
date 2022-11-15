@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { Spinner } from "../Spinner/Spinner";
 import { IoFootstepsOutline } from 'react-icons/io5'
-import { GoPrimitiveDot } from 'react-icons/go'
+
 
 
 export function RecipeSingle({ isThemeDark }) {
