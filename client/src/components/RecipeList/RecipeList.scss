@@ -2,9 +2,31 @@
   .recipeList-welcome {
     text-align: center;
     margin: 7rem 2rem;
-
+    
     h3 {
       margin-top: 2rem;
+    }
+
+    .navigate-to-recipes-form {
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      h1 {
+        span {
+          position: relative;
+          top: 15px;
+          margin-left: 20px;
+        }&:hover .navigate-icon {
+          transition: all .4s ease-in-out;
+          transform: scale(.9);
+        }
+
+      }
+
+        
+      }
     }
   }
   .recipeList {
@@ -74,4 +96,4 @@
       grid-gap: 1rem;
     }
   }
-}
+

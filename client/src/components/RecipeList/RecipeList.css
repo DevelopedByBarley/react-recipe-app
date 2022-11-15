@@ -7,31 +7,57 @@
   margin-top: 2rem;
 }
 
-.recipeList-container .recipeList {
+.recipeList-container .recipeList-welcome .navigate-to-recipes-form {
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.recipeList-container .recipeList-welcome .navigate-to-recipes-form h1 span {
+  position: relative;
+  top: 15px;
+  margin-left: 20px;
+}
+
+.recipeList-container .recipeList-welcome .navigate-to-recipes-form h1:hover .navigate-icon {
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.recipeList {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   padding: 1rem;
 }
 
-.recipeList-container .recipeList .card {
+.recipeList .card {
   margin-bottom: 1rem;
   -webkit-box-shadow: 10px 10px 14px 0px rgba(143, 138, 138, 0.75);
           box-shadow: 10px 10px 14px 0px rgba(143, 138, 138, 0.75);
 }
 
-.recipeList-container .recipeList .card .card-header {
+.recipeList .card .card-header {
   height: 300px;
 }
 
-.recipeList-container .recipeList .card .card-content {
+.recipeList .card .card-content {
   text-align: center;
 }
 
-.recipeList-container .recipeList .card .card-content .card-body .card-title h3 {
+.recipeList .card .card-content .card-body .card-title h3 {
   padding: 1rem;
 }
 
-.recipeList-container .recipeList .card .card-content .card-body .time-datas {
+.recipeList .card .card-content .card-body .time-datas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,22 +69,22 @@
           justify-content: center;
 }
 
-.recipeList-container .recipeList .card .card-content .card-body .time-datas .recipe-data {
+.recipeList .card .card-content .card-body .time-datas .recipe-data {
   margin: 0.5rem;
   padding: 1rem;
 }
 
-.recipeList-container .recipeList .card .card-content .card-body .time-datas .recipe-data .recipe-icon {
+.recipeList .card .card-content .card-body .time-datas .recipe-data .recipe-icon {
   position: relative;
   top: 5px;
 }
 
-.recipeList-container .recipeList .card .card-content .card-body .time-datas .recipe-data span {
+.recipeList .card .card-content .card-body .time-datas .recipe-data span {
   color: #fd841f;
   font-weight: bolder;
 }
 
-.recipeList-container .recipeList .card .card-content .card-footer {
+.recipeList .card .card-content .card-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,13 +96,13 @@
           justify-content: center;
 }
 
-.recipeList-container .recipeList .card .card-content .card-footer .card-btn {
+.recipeList .card .card-content .card-footer .card-btn {
   background: none;
   border: none;
   margin: 0.5rem;
 }
 
-.recipeList-container .recipeList:hover {
+.recipeList:hover {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   -webkit-transform: scale(1.01);
@@ -84,7 +110,7 @@
 }
 
 @media (min-width: 768px) {
-  .recipeList-container .recipeList {
+  .recipeList {
     display: -ms-grid;
     display: grid;
     grid-gap: 1rem;

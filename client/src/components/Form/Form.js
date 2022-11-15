@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import jwtDecode from 'jwt-decode'
 import { NavigateToLogin } from '../NavigatToLogin/NavigateToLogin';
 
-export function Form({ isThemeDark }) {
+export function Form() {
 
   const navigate = useNavigate();
   const [isLoggedIn, setLoggedIn] = useState(false)

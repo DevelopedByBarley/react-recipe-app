@@ -6,8 +6,8 @@ import { BiTrash } from 'react-icons/bi'
 import { CiStopwatch } from 'react-icons/ci'
 import { HiOutlineRefresh } from 'react-icons/hi'
 import { MdOutlineMenuBook } from 'react-icons/md'
+import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 import { useState, useEffect } from 'react';
-import { Spinner } from '../Spinner/Spinner';
 import { Link } from 'react-router-dom';
 import { NavigateToLogin } from '../NavigatToLogin/NavigateToLogin';
 
@@ -58,7 +58,11 @@ export function RecipeList() {
           <div className="recipeList-container">
             <div className='recipeList-welcome'>
               <h1>Welcome {userName}! </h1>
-              <h3>You have {recipes.length} recipes!</h3>
+              <h2>You have {recipes.length} recipes!</h2>
+              <br />
+              {recipes.length === 0 ? <div className='navigate-to-recipes-form'>
+                <h1>Adj hozzá  <span><Link to='/recipes/add'><BsFillArrowRightCircleFill color='orange' className='navigate-icon' size={60}/></Link></span></h1>
+              </div> : ""}
             </div>
             <div className='recipeList'>
               {recipes.map((recipe, index) => {

@@ -2,6 +2,7 @@ import axios from "axios";
 import '../Form/Form.css'
 import { BiTrash } from 'react-icons/bi';
 import { BsFillPlusCircleFill } from 'react-icons/bs'
+import { RiImageAddFill } from 'react-icons/ri'
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import { v4 as uuidv4, v4 } from 'uuid';
@@ -204,9 +205,13 @@ export function UpdateForm() {
           }}><BsFillPlusCircleFill size={25} /></button>
         </div>
 
-        <div className='file'>
-          <input type="file" name="fileName" id="fileName" />
+        <div className='file-container'>
+          <button className='file-button'>
+            <input type="file" className='file' name="fileName" id="fileName" required />
+            <RiImageAddFill size={50} />
+          </button>
         </div>
+
 
 
 
