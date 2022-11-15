@@ -18,6 +18,7 @@
 
 .login-form h1 {
   margin: 5rem 0 2rem 0;
+  font-size: 3rem;
 }
 
 .login-form .login-button {
@@ -27,6 +28,7 @@
   background-color: #46993e;
   margin-top: 1rem;
   cursor: pointer;
+  border: none;
 }
 
 .login-form .forgot-password {

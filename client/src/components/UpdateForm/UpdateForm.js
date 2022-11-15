@@ -207,7 +207,7 @@ export function UpdateForm() {
 
         <div className='file-container'>
           <button className='file-button'>
-            <input type="file" className='file' name="fileName" id="fileName" required />
+            <input type="file" className='file' name="fileName" id="fileName" />
             <RiImageAddFill size={50} />
           </button>
         </div>

@@ -81,7 +81,7 @@ export function RecipeSingle({ isThemeDark }) {
                     })}
                   </div>
                   <div className='recipe-single-comment'>
-                    <h1>Comment:</h1>
+                    <h1>Leirás:</h1>
                     <p className='comment'>{recipe.comment}</p>
                   </div>
                 </div>

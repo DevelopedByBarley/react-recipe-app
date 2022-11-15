@@ -105,34 +105,34 @@
         }
       }
       .recipe-single-steps {
-        border-radius: 15px;
-        padding: 0.5rem;
-        margin: 1rem 0 3rem 0;
-        margin: 0.5rem;
-        background-color: #ff731d;
         color: white;
         text-align: center;
 
         .recipe-single-step {
+          border-radius: 15px;
+          padding: 0.5rem;
+          background-color: #ff731d;
+          margin: 1.5rem .5rem;
           .recipe-single-step-content {
             padding: 1rem;
           }
           .step-index {
             font-size: 1.2rem;
           }
+          &:hover {
+            transition: all 0.4s ease-in-out;
+            transform: scale(0.98);
+          }
         }
-        &:hover {
-          transition: all 0.4s ease-in-out;
-          transform: scale(0.98);
-        }
+
         @media (min-width: 768px) {
           .recipe-single-step {
-            margin: .5rem auto;
+            margin: 0.5rem auto;
           }
         }
       }
 
-      @media(min-width: 768px) {
+      @media (min-width: 768px) {
         .recipe-single-steps {
           width: 60%;
           margin: 0 auto;

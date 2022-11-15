@@ -6,9 +6,6 @@ import { Link } from "react-router-dom";
 export function SearchBox() {
   const [foundRecipe, setFoundRecipe] = useState([])
 
-
-  console.log(foundRecipe, "hello");
-
   function searchRecipes(event) {
 
     console.log(event.target.value.length);

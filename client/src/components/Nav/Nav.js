@@ -1,5 +1,5 @@
 import './Nav.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { RiMenuFill } from 'react-icons/ri'
 import { IoRestaurantSharp } from 'react-icons/io5'
@@ -20,16 +20,16 @@ export function Nav({ isLoggedIn, setLoggedIn }) {
         <div className="nav-wrapper">
           <ul>
             <li onClick={() => setMenuActive(false)} >
-              <Link className='link' to="/"><IoRestaurantSharp size={25} /></Link>
+              <NavLink className='link' to="/"><IoRestaurantSharp size={25} /></NavLink>
             </li>
             <li onClick={() => setMenuActive(false)}>
-              <Link className='link' to="/home">Kezdőlap</Link>
+              <NavLink className='link' to="/home">Kezdőlap</NavLink>
             </li>
             <li onClick={() => setMenuActive(false)}>
-              <Link className='link' to="/recipes">Recept lista</Link>
+              <NavLink className='link' to="/recipes">Recept lista</NavLink>
             </li>
             <li onClick={() => setMenuActive(false)}>
-              <Link className='link' to="/recipes/add">Recept hozzáadása</Link>
+              <NavLink className='link' to="/recipes/add">Recept hozzáadása</NavLink>
             </li>
           </ul>
           <div className='log-buttons'>
