@@ -36,7 +36,6 @@ export function HomePage() {
       <Spinner />
     ) : (
       <div className={"home-container"}>
-        <h1 className='home-title'>Home</h1>
         <div className='search-container'>
           <SearchBox/>
         </div>
@@ -55,9 +54,9 @@ export function HomePage() {
                         <h1>{recipe.title}</h1>
                       </div>
                       <div className='latest-recipe-content'>
-                        <CiStopwatch size={30} className='recipe-icon' />&nbsp;{recipe.fullTime}mins
-                        <MdOutlineMenuBook size={30} className='recipe-icon' />&nbsp;{recipe.ingredients.length} ingredient
-                        <IoFootstepsOutline size={30} className='recipe-icon' />&nbsp;{recipe.steps.length} step
+                        <CiStopwatch size={30} className='recipe-icon' />&nbsp;{recipe.fullTime} perc
+                        <MdOutlineMenuBook size={30} className='recipe-icon' />&nbsp;{recipe.ingredients.length} hozzávaló
+                        <IoFootstepsOutline size={30} className='recipe-icon' />&nbsp;{recipe.steps.length} lépés
                       </div>
                     </div>
                   </Link>
@@ -72,9 +71,9 @@ export function HomePage() {
               <h1 className='random-one-card-title'>{randomRecipe?.title}</h1>
               <div className='random-one-card-content'>
                 <h5>
-                  <CiStopwatch size={30} className='recipe-icon' />{randomRecipe?.fullTime} mins
-                  <MdOutlineMenuBook size={30} className='recipe-icon' />{randomRecipe?.ingredients.length} ingredient
-                  <IoFootstepsOutline size={30} className='recipe-icon' />{randomRecipe?.steps.length} step</h5>
+                  <CiStopwatch size={30} className='recipe-icon' />{randomRecipe?.fullTime} perc
+                  <MdOutlineMenuBook size={30} className='recipe-icon' />{randomRecipe?.ingredients.length} hozzávaló
+                  <IoFootstepsOutline size={30} className='recipe-icon' />{randomRecipe?.steps.length} lépés</h5>
               </div>
             </div>
           </div>
@@ -87,8 +86,8 @@ export function HomePage() {
           <div className='hungarian-five-container'>
             <div className='hungarian-five-header'>
               <div className='hungarian-five-title'>
-                <h1 className='section-title'>If you like hungarian's</h1>
-                <p>{hungarianRecipes.length} recipe for you</p>
+                <h1 className='section-title'>Ha szereted a Magyar recepteket!</h1>
+                <p>{hungarianRecipes.length} Recept neked</p>
               </div>
             </div>
             {hungarianRecipes.map((recipe) => {
@@ -118,8 +117,8 @@ export function HomePage() {
           <div className='fast-recipes-container'>
             <div className='fast-recipes-header'>
               <div className='fast-recipes-title'>
-                <h1 className='section-title'>If you need some fast food</h1>
-                <p> Less than 18 minutes</p>
+                <h1 className='section-title'>Ha kevés időd van!</h1>
+                <p>Kevesebb mint 18 perc alatt elkészül!</p>
               </div>
             </div>
             <div className='fast-recipes-cards'>

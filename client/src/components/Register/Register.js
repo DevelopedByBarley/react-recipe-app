@@ -38,12 +38,12 @@ export function Register() {
 
   return (
     <div className='register-container'>
-      <h1>Register</h1>
+      <h1>Regisztráció</h1>
       <form onSubmit={registerUser}>
-        <input type="text" placeholder="Name" onChange={(event) => { setName(event.target.value) }} />
+        <input type="text" placeholder="Felhasználó név" onChange={(event) => { setName(event.target.value) }} />
         <input type="email" placeholder="Email" onChange={(event) => { setEmail(event.target.value) }} />
-        <input type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} /><br />
-        <button type='submit'>Register</button>
+        <input type="password" placeholder="Jelszó" onChange={(event) => { setPassword(event.target.value) }} /><br />
+        <button type='submit'>Regisztráció</button>
       </form>
     </div>
   )

@@ -3,6 +3,16 @@
   margin: 7rem 2rem;
 }
 
+.recipeList-container .recipeList-welcome .user-name {
+  color: #fd841f;
+}
+
+.recipeList-container .recipeList-welcome .number-of-recipes {
+  color: #fd841f;
+  padding: .3rem;
+  font-size: 2.3rem;
+}
+
 .recipeList-container .recipeList-welcome h3 {
   margin-top: 2rem;
 }

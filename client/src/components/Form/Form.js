@@ -52,7 +52,7 @@ export function Form() {
       {
         isLoggedIn ? (
           <div className="form-container">
-            <h1 className='form-header'>Add Recipe</h1>
+            <h1 className='form-header'>Recept hozzáadása:</h1>
 
             <form onSubmit={(event) => {
               event.preventDefault();
@@ -87,12 +87,12 @@ export function Form() {
             }}>
 
               <div className='title'>
-                <h3>Title:</h3>
-                <input type="text" name="title" id="title" required />
+                <h3>Név:</h3>
+                <input type="text" name="title" id="title" required  placeholder='név'/>
               </div>
 
               <div className='categories'>
-                <h3>Categories:</h3>
+                <h3>Kategória:</h3>
                 <select name='categories'>
                   {categories.map((categorie) => {
                     return (
@@ -103,18 +103,18 @@ export function Form() {
               </div>
 
               <div className="ingredients">
-                <h3>Ingredients:</h3>
+                <h3>Hozzávalók:</h3>
                 {ingredients.map((ingredient, index) => {
                   return (
                     <div key={index}>
-                      <input type="text" placeholder='name' className='ingredient-input' name={`ingredient-name-${index}`} required onChange={(event) => {
+                      <input type="text" placeholder={`${index + 1}. hozzávaló`} className='ingredient-input' name={`ingredient-name-${index}`} required onChange={(event) => {
                         setIngredients((prev) => {
                           const next = [...prev];
                           next[index].name = event.target.value;
                           return next
                         })
                       }} />
-                      <input type="text" placeholder='quantity' className='ingredient-input' name={`ingredient-quantity-${index}`} required onChange={(event) => {
+                      <input type="text" placeholder='mennyiség' className='ingredient-input' name={`ingredient-quantity-${index}`} required onChange={(event) => {
                         setIngredients((prev) => {
                           const next = [...prev];
                           next[index].quantity = event.target.value
@@ -174,11 +174,11 @@ export function Form() {
 
 
               <div className='steps'>
-                <h3>Steps:</h3>
+                <h3>Lépések:</h3>
                 {steps.map((step, index) => {
                   return (
                     <div key={index}>
-                      <input type="text" name={`steps-content-${index}`} placeholder="step" required onChange={(event) => {
+                      <input type="text" name={`steps-content-${index}`} placeholder={`${index + 1}. lépés`} required onChange={(event) => {
                         setSteps((prev) => {
                           const next = [...prev];
                           next[index].content = event.target.value;
@@ -215,16 +215,16 @@ export function Form() {
                   
 
               <div>
-                <h3>Preparation:</h3>
-                <input type="number" name="prepTime" id="prepTime" required />
+                <h3>Előkészitési idő:</h3>
+                <input type="number" name="prepTime" placeholder='perc' id="prepTime" required />
               </div>
               <div>
-                <h3>Cook:</h3>
-                <input type="number" name="cookTime" id="cookTime" required />
+                <h3>Főzési idő:</h3>
+                <input type="number" name="cookTime" placeholder='perc' id="cookTime" required />
               </div>
               <div>
-                <h3>Comment:</h3>
-                <textarea rows="10" col="40" name="comment" defaultValue={"comment..."} required></textarea>
+                <h3>Leirás:</h3>
+                <textarea rows="10" col="40" name="comment" placeholder='leirás hozzáadása...' required></textarea>
               </div>
 
 

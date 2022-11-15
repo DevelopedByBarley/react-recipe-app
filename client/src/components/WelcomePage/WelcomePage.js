@@ -46,9 +46,9 @@ export function WelcomePage() {
           <div className='welcome-page'>
             <div className>
               <div className='welcome'>
-                <h1>Welcome to my Recipe App</h1>
+                <h1>Köszöntelek a Recept Appon!</h1>
               </div>
-              <h1>We have {recipes.length} Recipes!</h1>
+              <h1>Jelenleg {recipes.length} recept található!</h1>
               <Link className='link next-arrow' to="/home"><BsFillArrowRightCircleFill size={70}/></Link>
               <div className='ratings'>
                 <div className='numberOfRatings'>

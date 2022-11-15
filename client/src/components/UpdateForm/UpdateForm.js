@@ -81,12 +81,12 @@ export function UpdateForm() {
       }}>
 
         <div>
-          <h3>Title:</h3>
+          <h3>Név:</h3>
           <input type="text" name="title" id="title" required defaultValue={recipeData.title} />
         </div>
 
         <div className='categories'>
-          <h3>Categories:</h3>
+        <h3>Kategória:</h3>
           <select name='categories'>
             {categories.map((categorie) => {
               {
@@ -101,11 +101,11 @@ export function UpdateForm() {
         </div>
 
         <div className="ingredients">
-          <h3>Ingredients:</h3>
+          <h3>Hozzávalók:</h3>
           {ingredients?.map((ingredient, index) => {
             return (
               <div key={index}>
-                <input type="text" defaultValue={ingredient.name} name={`ingredient-name-${index}`} className="ingredient-input" required onChange={(event) => {
+                <input type="text" placeholder={`${index + 1}. hozzávaló`} defaultValue={ingredient.name} name={`ingredient-name-${index}`} className="ingredient-input" required onChange={(event) => {
                   setIngredients((prev) => {
                     const next = [...prev];
                     next[index].name = event.target.value;
@@ -173,11 +173,11 @@ export function UpdateForm() {
 
 
         <div className='steps'>
-          <h3>Steps:</h3>
+          <h3>Lépések:</h3>
           {steps?.map((step, index) => {
             return (
               <div className='step' key={index}>
-                <input type="text" name={`steps-content-${index}`} defaultValue={step.content} required onChange={(event) => {
+                <input type="text" placeholder={`${index + 1}. Lépés`} name={`steps-content-${index}`} defaultValue={step.content} required onChange={(event) => {
                   setSteps((prev) => {
                     const next = [...prev];
                     next[index].content = event.target.value;
@@ -218,16 +218,16 @@ export function UpdateForm() {
 
 
         <div>
-          <h3>Preparation:</h3>
-          <input type="number" name="prepTime" id="prepTime" defaultValue={recipeData.prepTime} required />
+        <h3>Előkészitési idő:</h3>
+          <input type="number" name="prepTime" id="prepTime" placeholder="perc" defaultValue={recipeData.prepTime} required />
         </div>
         <div>
-          <h3>Cook:</h3>
+        <h3>Főzési idő:</h3>
           <input type="number" name="cookTime" id="cookTime" defaultValue={recipeData.cookTime} required />
         </div>
         <div>
-          <h3>Comment:</h3>
-          <textarea rows="4" col="50" name="comment" defaultValue={recipeData.comment} required>
+          <h3>Leirás:</h3>
+          <textarea rows="4" col="50" name="comment" placeholder="Leirás hozzáadása..." defaultValue={recipeData.comment} required>
 
           </textarea>
         </div>

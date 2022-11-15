@@ -23,30 +23,30 @@ export function Nav({ isLoggedIn, setLoggedIn }) {
               <Link className='link' to="/"><IoRestaurantSharp size={25} /></Link>
             </li>
             <li onClick={() => setMenuActive(false)}>
-              <Link className='link' to="/home">Home</Link>
+              <Link className='link' to="/home">Kezdőlap</Link>
             </li>
             <li onClick={() => setMenuActive(false)}>
-              <Link className='link' to="/recipes">Recipes</Link>
+              <Link className='link' to="/recipes">Recept lista</Link>
             </li>
             <li onClick={() => setMenuActive(false)}>
-              <Link className='link' to="/recipes/add">Add recipe</Link>
+              <Link className='link' to="/recipes/add">Recept hozzáadása</Link>
             </li>
           </ul>
           <div className='log-buttons'>
             <button className='login' style={{ "display": `${isLoggedIn ? "none" : ""}` }} onClick={() => {
               navigate("/login")
               setMenuActive(false);
-            }}>Login</button>
+            }}>Bejelentkezés</button>
             <button className='logout' style={{ "display": `${isLoggedIn ? "" : "none"}` }} onClick={() => {
               setMenuActive(false)
               localStorage.clear();
               setLoggedIn(false)
               navigate('/')
-            }}>Logout</button>
+            }}>Kijelentkezés</button>
             <button className='register' style={{ "display": `${isLoggedIn ? "none" : ""}` }} onClick={() => {
               setMenuActive(false)
               navigate('/register')
-            }}>Register</button>
+            }}>Regisztráció</button>
           </div>
         </div>
 

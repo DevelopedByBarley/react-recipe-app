@@ -42,13 +42,13 @@ export function Login({ setLoggedIn }) {
 
   return (
     <div className='login-form'>
-      <h1>Login</h1>
+      <h1>Bejelentkezés</h1>
       <form onSubmit={loginUser}>
 
         <input type="email" placeholder="Email" onChange={(event) => { setEmail(event.target.value) }} />
-        <input type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} /><br/>
-        <button type='submit' className='login-button'>Login</button> <br></br>
-        <Link className='forgot-password'>Forgot your password?</Link>
+        <input type="password" placeholder="Jelszó" onChange={(event) => { setPassword(event.target.value) }} /><br/>
+        <button type='submit' className='login-button'>Bejelentkezés</button> <br></br>
+        <Link className='forgot-password'>Elfelejtetted a jelszavad?</Link>
       </form>
     </div>
   )
