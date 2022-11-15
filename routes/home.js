@@ -7,8 +7,7 @@ router.get('/', async (req, res) => {
   let randomRecipe = await Recipe.aggregate().sample(1)
   const latestFive = await Recipe.find({}).sort({ _id: -1 }).limit(5)
   const hungarianRecipes = await Recipe.find({ categorie: '636a32aa75f43bb3fb93cd3e' }).sort({ _id: -1 }).limit(5);
-  const fastRecipes = await Recipe.find({fullTime: {$lte: 17}}).limit(6)
-
+  const fastRecipes = await Recipe.find({ fullTime: { $lte: 17 } }).limit(6)
 
   getRandomRecipe();
 
@@ -24,7 +23,17 @@ router.get('/', async (req, res) => {
 
 })
 
+router.post('/query', async (req, res) => {
+  const { title } = req.body;
+  try {
+    const query = await Recipe.find({}).regex('title', new RegExp(title, 'i'))
+    res.send(query);
+  } catch  {
+    res.send('No recipes')
+  }
 
+
+})
 
 
 async function getRandomRecipe() {
