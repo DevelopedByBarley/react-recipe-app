@@ -1,6 +1,7 @@
 import './Form.css'
 import { BiTrash } from 'react-icons/bi';
 import { BsFillPlusCircleFill } from 'react-icons/bs'
+import { RiImageAddFill } from 'react-icons/ri'
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { useEffect, useState } from 'react';
@@ -205,9 +206,13 @@ export function Form({ isThemeDark }) {
                 }}><BsFillPlusCircleFill size={25} /></button>
               </div>
 
-              <div className='file'>
-                <input type="file" name="fileName" id="fileName" required />
+              <div className='file-container'>
+                <button className='file-button'>
+                  <input type="file" className='file' name="fileName" id="fileName" required />
+                  <RiImageAddFill size={50} />
+                </button>
               </div>
+                  
 
               <div>
                 <h3>Preparation:</h3>

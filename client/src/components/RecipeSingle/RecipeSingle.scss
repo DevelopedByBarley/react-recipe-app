@@ -19,6 +19,10 @@
     .recipe-single-userName {
       text-align: center;
       margin: 1.5rem;
+
+      p {
+        margin-top: 1.5rem;
+      }
     }
   }
 
@@ -65,7 +69,7 @@
 
       .recipe-header {
         text-align: center;
-        padding: 1rem;
+        padding: 3rem;
 
         .recipe-title {
           margin: 1rem;
@@ -77,12 +81,12 @@
         text-align: center;
         border-radius: 15px;
         padding: 0.5rem;
-        margin: 1rem 0 3rem 0;
+        margin: 3rem 0 3rem 0;
 
         .recipe-single-ingredient {
           margin: 1rem;
           display: grid;
-          grid-template-columns: 50% 50%;
+          grid-template-columns: 40% 40%;
           align-items: center;
           justify-content: center;
           text-align: center;
@@ -123,13 +127,17 @@
         }
         @media (min-width: 768px) {
           .recipe-single-step {
-            width: 60%;
-            margin: .8rem auto;
+            margin: .5rem auto;
           }
         }
       }
 
-      
+      @media(min-width: 768px) {
+        .recipe-single-steps {
+          width: 60%;
+          margin: 0 auto;
+        }
+      }
 
       .recipe-single-comment {
         min-height: 100px;
@@ -144,13 +152,5 @@
         }
       }
     }
-  }
-}
-
-@media (min-width: 768px) {
-  .recipe-single-ingredients,
-  .recipe-single-step {
-    width: 60%;
-    margin: 3rem auto;
   }
 }

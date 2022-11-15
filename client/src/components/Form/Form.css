@@ -60,12 +60,39 @@ input {
   margin-top: 1rem;
 }
 
-.form-container .file {
-  width: 100%;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.form-container .file-container .file-button {
+  position: relative;
   margin: 2rem;
+  background-color: #008b8b;
+  color: white;
+  padding: 2rem;
+  border: none;
+}
+
+.form-container .file-container .file-button .file {
+  cursor: pointer;
+  position: absolute;
+  overflow: hidden;
+  top: -8px;
+  left: -8px;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .form-container .file-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .form-container .add-btn {

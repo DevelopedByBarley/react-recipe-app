@@ -3,6 +3,10 @@
   margin: 7rem 2rem;
 }
 
+.recipeList-container .recipeList-welcome h3 {
+  margin-top: 2rem;
+}
+
 .recipeList-container .recipeList {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);

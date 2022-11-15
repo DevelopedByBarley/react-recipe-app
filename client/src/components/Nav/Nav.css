@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=IBM+Plex+Sans+Arabic:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200&family=Lobster&display=swap");
 header .menu-toggle {
   position: fixed;
   right: 5px;
@@ -49,13 +49,19 @@ nav ul {
 
 nav ul li .link {
   text-decoration: none;
-  font-family: "Concert One", cursive;
   font-size: 3rem;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: bolder;
+}
+
+nav .log-buttons {
+  margin-top: 2rem;
 }
 
 nav .log-buttons button {
   color: white;
   padding: 0.5rem 1.5rem;
+  margin: 1rem;
   cursor: pointer;
 }
 
@@ -99,7 +105,6 @@ nav .log-buttons .register {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    border-bottom: 1px solid;
   }
   nav .nav-wrapper ul {
     display: -webkit-box;
@@ -112,6 +117,12 @@ nav .log-buttons .register {
   nav .nav-wrapper ul li .link {
     font-size: 1.2rem;
     margin: 0 1rem;
+  }
+  nav .nav-wrapper .log-buttons {
+    margin-top: 0;
+  }
+  nav .nav-wrapper .log-buttons button {
+    margin: 0;
   }
 }
 /*# sourceMappingURL=Nav.css.map */

@@ -43,6 +43,7 @@
   position: relative;
   -webkit-box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
+  min-height: 250px;
 }
 
 .home-container .latest-five-recipes-container .latest-five-recipe-card .homepage-link .latest-recipe-header .latest-recipe-img {
@@ -178,6 +179,7 @@
   -webkit-box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
   position: relative;
+  min-height: 450px;
 }
 
 .home-container .hungarian-five-container .hungarian-five-cards .hungarian-card-img {
@@ -185,7 +187,7 @@
 }
 
 .home-container .hungarian-five-container .hungarian-five-cards .hungarian-card-body {
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 .home-container .hungarian-five-container .hungarian-five-cards .hungarian-card-body .hungarian-card-title h1 {
@@ -218,11 +220,14 @@
 }
 
 .home-container .fast-recipes-container .fast-recipes-header .fast-recipes-title h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  margin: 1rem;
+  text-align: center;
 }
 
 .home-container .fast-recipes-container .fast-recipes-header .fast-recipes-title p {
   font-size: 1.5rem;
+  margin-top: 2rem;
 }
 
 .home-container .fast-recipes-container .fast-recipes-cards {

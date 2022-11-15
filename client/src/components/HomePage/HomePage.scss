@@ -38,6 +38,7 @@
     .latest-five-recipe-card {
       position: relative;
       box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
+      min-height: 250px;
 
       .homepage-link {
         .latest-recipe-header {
@@ -168,13 +169,14 @@
     .hungarian-five-cards {
       box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
       position: relative;
+      min-height: 450px;
 
       .hungarian-card-img {
         height: 250px;
       }
 
       .hungarian-card-body {
-        padding: 2rem 0;
+        padding: 2rem 1rem;
         .hungarian-card-title {
           h1 {
             font-size: 1.7rem;
@@ -209,11 +211,14 @@
         margin: 5rem;
 
         h1 {
-          font-size: 3.5rem;
+          font-size: 2.5rem;
+          margin: 1rem;
+          text-align: center;
         }
 
         p {
           font-size: 1.5rem;
+          margin-top: 2rem;
         }
       }
     }

@@ -1,16 +1,14 @@
+input:focus {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  padding: 0.4rem;
+}
 
-  input:focus {
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    padding: 0.4rem;
-  }
-  
-  input {
-    width: 80%;
-    margin: 0.4rem;
-    padding: 0.2rem;
-  }
-  
+input {
+  width: 80%;
+  margin: 0.4rem;
+  padding: 0.2rem;
+}
 
 .form-container {
   padding: 1rem;
@@ -36,7 +34,6 @@
       width: 35%;
       margin: 0.2rem;
       padding: 0.2rem;
-
     }
     .quantity-type {
       width: 55px;
@@ -60,15 +57,35 @@
     margin-top: 1rem;
   }
 
-  .file {
-    width: 100%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin: 2rem;
+  .file-container {
+    .file-button {
+      position: relative;
+      margin: 2rem;
+      background-color: #008b8b;
+      color: white;
+      padding: 2rem;
+      border: none;
+      .file {
+        cursor: pointer;
+        position: absolute;
+        overflow: hidden;
+        top: -8px;
+        left: -8px;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 
-
+  @media (max-width: 768px) {
+    .file-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 
   .add-btn {
     color: #2192ff;
@@ -77,7 +94,7 @@
     border: none;
     margin: 0.5rem;
   }
-  
+
   button {
     cursor: pointer;
   }
@@ -105,19 +122,10 @@
     transition: all 0.4s ease-in-out;
     padding: 0.4rem;
   }
-  
+
   input {
     width: 80%;
     margin: 0.4rem;
     padding: 0.2rem;
   }
-  
 }
-
-
-
-
-
-
-
-
