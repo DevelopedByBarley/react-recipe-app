@@ -104,7 +104,7 @@ export function UpdateForm() {
 
         <div className='type'>
           <h3>Tipus:</h3>
-          <select name="type" value={recipeData.type}>
+          <select name="type">
             <option value="appetizer">Előétel</option>
             <option value="main-course">Főétel</option>
             <option value="sweetness">Édesség</option>

@@ -6,7 +6,6 @@ import { MdMarkEmailUnread } from 'react-icons/md'
 export function Footer() {
   return (
     <div className='footer'>
-      <h1>Köszönöm a figyelmet!</h1>
       <div className="personal-contact">
         <a href='developedbybarley@gmail.com'>
           <MdMarkEmailUnread size={40} />

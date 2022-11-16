@@ -26,7 +26,7 @@ export function Nav({ isLoggedIn, setLoggedIn }) {
               <NavLink className='link' to="/home">Kezdőlap</NavLink>
             </li>
             <li onClick={() => setMenuActive(false)}>
-              <NavLink className='link' to="/recipes">Recept lista</NavLink>
+              <NavLink className='link' to="/recipes">Receptjeid</NavLink>
             </li>
             <li onClick={() => setMenuActive(false)}>
               <NavLink className='link' to="/recipes/add">Recept hozzáadása</NavLink>

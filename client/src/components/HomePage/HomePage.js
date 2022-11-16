@@ -153,7 +153,6 @@ export function HomePage() {
             <div className='dessert-recipes-header'>
               <div className='dessert-recipes-title'>
                 <h1 className='section-title'>Ha egy kis édességre vágysz!</h1>
-                <p>{dessertRecipes.length} Desszert neked!</p>
               </div>
             </div>
             <div className='dessert-recipes-cards'>
@@ -176,11 +175,13 @@ export function HomePage() {
                   </div>
                 )
               })}
+              <div className='dessert-for-you'> <h1>{dessertRecipes.length} Desszert neked!</h1></div>
             </div>
           </div>
 
         </div>
-
+        
+        <div className='goodbye'><h1>Köszönjük hogy erre jártál!</h1></div>
         <Footer />
       </div>
     )
