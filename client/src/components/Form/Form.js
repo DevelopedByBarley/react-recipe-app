@@ -58,6 +58,7 @@ export function Form() {
               event.preventDefault();
               const recipeData = {
                 title: event.target.elements.title.value,
+                type: event.target.elements.type.value,
                 prepTime: event.target.elements.prepTime.value,
                 cookTime: event.target.elements.cookTime.value,
                 comment: event.target.elements.comment.value,
@@ -94,11 +95,30 @@ export function Form() {
               <div className='categories'>
                 <h3>Kategória:</h3>
                 <select name='categories'>
-                  {categories.map((categorie) => {
+                  {categories.map((categorie, index) => {
                     return (
-                      <option value={categorie._id}>{categorie.title}</option>
+                      <option key={index} value={categorie._id}>{categorie.title}</option>
                     )
                   })}
+                </select>
+              </div>
+
+              <div className='type'>
+                <h3>Tipus:</h3>
+                <select name="type">
+                  <option value="appetizer">Előétel</option>
+                  <option value="main-course">Főétel</option>
+                  <option value="sweetness">Édesség</option>
+                  <option value="dessert">Desszert</option>
+                  <option value="seafood">Tengeri</option>
+                  <option value="pottage">Főzelék</option>
+                  <option value="soup">Leves</option>
+                  <option value="salad">Saláta</option>
+                  <option value="vegetarian">Vegetáriánus</option>
+                  <option value="sauce">Szósz</option>
+                  <option value="free-from-everything">Minden mentes</option>
+                  <option value="free-from-lactose">Laktóz mentes</option>
+                  <option value="free-from-gluten">Glutén mentes</option>
                 </select>
               </div>
 

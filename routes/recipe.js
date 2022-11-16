@@ -77,6 +77,7 @@ router.post('/', upload.single('fileName'), async (req, res) => {
     userName: userName,
     name: req.body.name,
     title: recipeData.title,
+    type: recipeData.type,
     categorie: recipeData.categorie,
     ingredients: ingredientsData,
     steps: stepsData,
@@ -139,6 +140,7 @@ router.put('/:recipeId', upload.single('fileName'), async (req, res) => {
 
   const recipeForUpdate = {
     title: recipeData.title,
+    type: recipeData.type,
     categorie: recipeData.categorie,
     ingredients: ingredientsData,
     steps: stepsData,

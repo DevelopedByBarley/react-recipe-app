@@ -15,6 +15,10 @@ const RecipeSchema = new Schema({
     required: false,
     ref: 'Categories'
   },
+  type: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now

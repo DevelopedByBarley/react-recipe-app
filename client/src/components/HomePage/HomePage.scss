@@ -188,6 +188,7 @@
           position: absolute;
           bottom: 10px;
           text-align: center;
+          left: 0;
           width: 100%;
         }
       }
@@ -249,8 +250,7 @@
             width: 100%;
             position: absolute;
             bottom: 10px;
-            left: 50%;
-            transform: translate(-50%);
+            left: 0;
           }
         }
       }
@@ -262,3 +262,68 @@
     }
   }
 }
+
+
+
+
+
+.dessert-container {
+  margin: 0.5rem;
+
+  .dessert-recipes-header {
+    .dessert-recipes-title {
+      text-align: center;
+      margin: 5rem;
+
+      h1 {
+        font-size: 2.5rem;
+        margin: 1rem;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .dessert-recipes-cards {
+    display: grid;
+    grid-gap: 1.5rem;
+    .dessert-recipes-card {
+      position: relative;
+      box-shadow: 3px 8px 11px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .homepage-link {
+      .dessert-recipes-card-img {
+        height: 250px;
+      }
+
+      .dessert-recipes-card-body {
+        padding: 2rem;
+        .dessert-recipes-card-title {
+          text-align: center;
+          width: 100%;
+          margin-bottom: 4rem;
+        }
+
+        .dessert-recipes-card-content {
+          text-align: center;
+          width: 100%;
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .dessert-recipes-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+

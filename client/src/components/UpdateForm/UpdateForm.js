@@ -25,6 +25,7 @@ export function UpdateForm() {
       .then((res) => {
         setRecipeData({
           title: res.data.title,
+          type: res.data.type,
           prepTime: res.data.prepTime,
           cookTime: res.data.cookTime,
           comment: res.data.comment,
@@ -33,9 +34,9 @@ export function UpdateForm() {
         setFileNameForDelete(res.data.imageURL)
         setIngredients(res.data.ingredients)
         setSteps(res.data.steps)
+
       })
   }, [])
-
 
 
 
@@ -52,6 +53,7 @@ export function UpdateForm() {
         event.preventDefault();
         const recipeData = {
           title: event.target.elements.title.value,
+          type: event.target.elements.type.value,
           prepTime: event.target.elements.prepTime.value,
           cookTime: event.target.elements.cookTime.value,
           comment: event.target.elements.comment.value,
@@ -86,7 +88,7 @@ export function UpdateForm() {
         </div>
 
         <div className='categories'>
-        <h3>Kategória:</h3>
+          <h3>Kategória:</h3>
           <select name='categories'>
             {categories.map((categorie) => {
               {
@@ -97,6 +99,26 @@ export function UpdateForm() {
                 }
               }
             })}
+          </select>
+        </div>
+
+        <div className='type'>
+          <h3>Tipus:</h3>
+          <select name="type" value={recipeData.type}>
+            <option value="appetizer">Előétel</option>
+            <option value="main-course">Főétel</option>
+            <option value="sweetness">Édesség</option>
+            <option value="dessert">Desszert</option>
+            <option value="seafood">Tengeri</option>
+            <option value="pottage">Főzelék</option>
+            <option value="soup">Leves</option>
+            <option value="salad">Saláta</option>
+            <option value="vegetarian">Vegetáriánus</option>
+            <option value="sauce">Szósz</option>
+            <option value="free-from-everything">Minden mentes</option>
+            <option value="free-from-lactose">Laktóz mentes</option>
+            <option value="free-from-gluten">Glutén mentes</option>
+
           </select>
         </div>
 
@@ -218,11 +240,11 @@ export function UpdateForm() {
 
 
         <div>
-        <h3>Előkészitési idő:</h3>
+          <h3>Előkészitési idő:</h3>
           <input type="number" name="prepTime" id="prepTime" placeholder="perc" defaultValue={recipeData.prepTime} required />
         </div>
         <div>
-        <h3>Főzési idő:</h3>
+          <h3>Főzési idő:</h3>
           <input type="number" name="cookTime" id="cookTime" defaultValue={recipeData.cookTime} required />
         </div>
         <div>

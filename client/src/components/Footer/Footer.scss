@@ -1,7 +1,23 @@
 .footer {
-  height: 400px;
+  height: 200px;
   margin-top: 4rem;
   width: 100%;
   max-width: 1200px;
   border-top: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: orange;
+  h1 {
+    color: white;
+    margin: 1rem;
+  }
+  
+  .personal-contact {
+    a {
+      color: white;
+      padding: 2rem;
+    }
+  }
 }

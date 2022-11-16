@@ -16,7 +16,6 @@ export function WelcomePage() {
     setPending(true)
     axios.get('/api/recipes/allRecipes')
       .then((res) => {
-        console.log(res.data);
         setRecipes(res.data)
       })
       .finally(() => setPending(false))

@@ -15,8 +15,9 @@ export function HomePage() {
   const [isPending, setPending] = useState(false);
   const [lastFiveRecipe, setLastFiveRecipe] = useState([]);
   const [randomRecipe, setRandomRecipe] = useState();
-  const [hungarianRecipes, setHungarianRecipes] = useState([])
-  const [fastRecipes, setFastRecipes] = useState([])
+  const [hungarianRecipes, setHungarianRecipes] = useState([]);
+  const [fastRecipes, setFastRecipes] = useState([]);
+  const [dessertRecipes, setDessertRecipes] = useState([]);
 
   useEffect(() => {
     setPending(true)
@@ -26,9 +27,11 @@ export function HomePage() {
         setRandomRecipe(res.data.randomRecipe[0]);
         setHungarianRecipes(res.data.hungarianRecipes)
         setFastRecipes(res.data.fastRecipes)
+        setDessertRecipes(res.data.dessertRecipes)
       })
       .finally(() => setPending(false))
   }, [])
+
 
 
   return (
@@ -37,17 +40,17 @@ export function HomePage() {
     ) : (
       <div className={"home-container"}>
         <div className='search-container'>
-          <SearchBox/>
+          <SearchBox />
         </div>
         <div className='latest-five-container'>
           <div className='latest-five-recipes-container'>
 
             {lastFiveRecipe.map((recipe) => {
               return (
-                <div className='latest-five-recipe-card'>
+                <div className='latest-five-recipe-card' key={recipe._id}>
                   <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
                     <div className='latest-recipe-header'>
-                      <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center` , "backgroundSize": "cover" }}></div>
+                      <div className='latest-recipe-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
                     </div>
                     <div className='latest-recipe-body'>
                       <div className='latest-recipe-title'>
@@ -92,7 +95,7 @@ export function HomePage() {
             </div>
             {hungarianRecipes.map((recipe) => {
               return (
-                <div className='hungarian-five-cards'>
+                <div className='hungarian-five-cards' key={recipe._id}>
                   <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
                     <div className='hungarian-card-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
                     <div className='hungarian-card-body'>
@@ -100,9 +103,9 @@ export function HomePage() {
                         <h1>{recipe.title}</h1>
                       </div>
                       <div className='hungarian-card-content'>
-                        <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime} mins
-                        <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} ingredient
-                        <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} step
+                        <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime} perc
+                        <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló
+                        <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} lépés
                       </div>
                     </div>
                   </Link>
@@ -124,7 +127,7 @@ export function HomePage() {
             <div className='fast-recipes-cards'>
               {fastRecipes.map((recipe) => {
                 return (
-                  <div className='fast-recipes-card'>
+                  <div className='fast-recipes-card' key={recipe._id}>
                     <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
                       <div className='fast-recipes-card-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
                       <div className='fast-recipes-card-body'>
@@ -132,9 +135,41 @@ export function HomePage() {
                           <h1>{recipe.title}</h1>
                         </div>
                         <div className='fast-recipes-card-content'>
-                          <CiStopwatch size={30} className='recipe-icon' />{recipe.fullTime}  mins
-                          <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} ingredient
-                          <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} step
+                          <CiStopwatch size={30} className='recipe-icon' />{recipe.fullTime} perc
+                          <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló
+                          <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} lépés
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+
+
+          <div className='dessert-container'>
+            <div className='dessert-recipes-header'>
+              <div className='dessert-recipes-title'>
+                <h1 className='section-title'>Ha egy kis édességre vágysz!</h1>
+                <p>{dessertRecipes.length} Desszert neked!</p>
+              </div>
+            </div>
+            <div className='dessert-recipes-cards'>
+              {dessertRecipes.map((recipe) => {
+                return (
+                  <div className='dessert-recipes-card' key={recipe._id}>
+                    <Link className='homepage-link' to={`/recipe-single/${recipe._id}`}>
+                      <div className='dessert-recipes-card-img' style={{ "background": `url(${`/assets/files/${recipe.imageURL}`}) no-repeat center center`, "backgroundSize": "cover" }}></div>
+                      <div className='dessert-recipes-card-body'>
+                        <div className='dessert-recipes-card-title'>
+                          <h1>{recipe.title}</h1>
+                        </div>
+                        <div className='dessert-recipes-content'>
+                          <CiStopwatch size={30} className='recipe-icon' />{recipe.fullTime} perc
+                          <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló
+                          <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} lépés
                         </div>
                       </div>
                     </Link>
