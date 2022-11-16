@@ -66,8 +66,8 @@
 .search-box .founded-recipe-list-component ul .founded-recipes-link :hover {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  -webkit-transform: translate(-20px);
-          transform: translate(-20px);
+  -webkit-transform: translate(-10px);
+          transform: translate(-10px);
   background-color: orange;
   color: white;
   font-weight: bolder;

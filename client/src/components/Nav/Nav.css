@@ -17,7 +17,7 @@ nav {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #fd841f;
+  background-color: orange;
   z-index: 99;
   left: -100%;
   top: 0;
@@ -121,7 +121,7 @@ nav .log-buttons .register {
   nav .nav-wrapper ul li .link {
     font-size: 1.2rem;
     margin: 0 1rem;
-    color: #fd841f;
+    color: orange;
   }
   nav .nav-wrapper .log-buttons {
     margin-top: 0;
