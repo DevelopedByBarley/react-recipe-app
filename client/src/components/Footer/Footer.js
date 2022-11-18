@@ -8,12 +8,12 @@ export function Footer() {
     <div className='footer'>
       <div className="personal-contact">
         <a href='developedbybarley@gmail.com'>
-          <MdMarkEmailUnread size={40} />
+          <MdMarkEmailUnread size={40} target="_blank"/>
         </a>
-        <a href='https://www.facebook.com/arpad.szaniszlo.1'>
+        <a href='https://www.facebook.com/arpad.szaniszlo.1' target="_blank">
           <AiFillFacebook size={40} />
         </a>
-        <a href='https://github.com/DevelopedByBarley'>
+        <a href='https://github.com/DevelopedByBarley' target="_blank">
           <AiFillGithub size={40} />
         </a>
       </div>

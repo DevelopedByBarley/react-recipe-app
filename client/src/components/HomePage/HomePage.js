@@ -181,7 +181,6 @@ export function HomePage() {
 
         </div>
         
-        <div className='goodbye'><h1>Köszönjük hogy erre jártál!</h1></div>
         <Footer />
       </div>
     )
