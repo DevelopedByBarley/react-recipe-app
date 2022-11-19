@@ -82,15 +82,15 @@ export function RecipeList() {
                         <div className='time-datas'>
                           <p className='recipe-data'>
                             <CiStopwatch className='recipe-icon' size={25} />
-                            <span> {recipe.fullTime}</span> minutes
+                            <span> {recipe.fullTime}</span> perc
                           </p>
                           <p className='recipe-data'>
                             <MdOutlineMenuBook className='recipe-icon' size={25} />
-                            <span> {recipe.ingredients.length}</span> ingredients
+                            <span> {recipe.ingredients.length}</span> hozzávaló
                           </p>
                           <p className='recipe-data'>
                             <IoFootstepsOutline className='recipe-icon' size={30} />
-                            <span> {recipe.steps.length}</span> steps
+                            <span> {recipe.steps.length}</span> lépés
                           </p>
                         </div>
 

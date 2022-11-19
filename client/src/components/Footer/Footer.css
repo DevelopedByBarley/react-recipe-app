@@ -3,7 +3,7 @@
   margin-top: 10rem;
   width: 100%;
   max-width: 1200px;
-  border-top: 1px solid;
+  border-top: 1px solid #4b4b4b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,16 +17,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: orange;
 }
 
 .footer h1 {
-  color: white;
   margin: 1rem;
 }
 
 .footer .personal-contact a {
-  color: white;
+  color: black;
   padding: 2rem;
 }
 /*# sourceMappingURL=Footer.css.map */

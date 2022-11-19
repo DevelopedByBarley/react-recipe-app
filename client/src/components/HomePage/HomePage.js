@@ -58,7 +58,7 @@ export function HomePage() {
                       </div>
                       <div className='latest-recipe-content'>
                         <CiStopwatch size={30} className='recipe-icon' />&nbsp;{recipe.fullTime} perc
-                        <MdOutlineMenuBook size={30} className='recipe-icon' />&nbsp;{recipe.ingredients.length} hozzávaló
+                        <MdOutlineMenuBook size={30} className='recipe-icon' />&nbsp;{recipe.ingredients.length} hozzávaló<br/>
                         <IoFootstepsOutline size={30} className='recipe-icon' />&nbsp;{recipe.steps.length} lépés
                       </div>
                     </div>
@@ -75,7 +75,7 @@ export function HomePage() {
               <div className='random-one-card-content'>
                 <h5>
                   <CiStopwatch size={30} className='recipe-icon' />{randomRecipe?.fullTime} perc
-                  <MdOutlineMenuBook size={30} className='recipe-icon' />{randomRecipe?.ingredients.length} hozzávaló
+                  <MdOutlineMenuBook size={30} className='recipe-icon' />{randomRecipe?.ingredients.length} hozzávaló<br/>
                   <IoFootstepsOutline size={30} className='recipe-icon' />{randomRecipe?.steps.length} lépés</h5>
               </div>
             </div>
@@ -104,7 +104,7 @@ export function HomePage() {
                       </div>
                       <div className='hungarian-card-content'>
                         <CiStopwatch size={30} className='recipe-icon' /> {recipe.fullTime} perc
-                        <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló
+                        <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló<br/>
                         <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} lépés
                       </div>
                     </div>
@@ -136,7 +136,7 @@ export function HomePage() {
                         </div>
                         <div className='fast-recipes-card-content'>
                           <CiStopwatch size={30} className='recipe-icon' />{recipe.fullTime} perc
-                          <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló
+                          <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló<br/>
                           <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} lépés
                         </div>
                       </div>
@@ -167,7 +167,7 @@ export function HomePage() {
                         </div>
                         <div className='dessert-recipes-content'>
                           <CiStopwatch size={30} className='recipe-icon' />{recipe.fullTime} perc
-                          <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló
+                          <MdOutlineMenuBook size={30} className='recipe-icon' /> {recipe.ingredients.length} hozzávaló<br/>
                           <IoFootstepsOutline size={30} className='recipe-icon' /> {recipe.steps.length} lépés
                         </div>
                       </div>
